@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixed Nav Bar</title>
+  <link rel="stylesheet" href="nav.css">
+
+</head>
+
+<body>
+  <nav>
+    <div class="left">
+      <ul>
+
+        <li><a href="#" onclick="css()">CSS</a></li>
+        <li><a href="#" onclick="react()">React</a></li>
+        <li><a href="#" onclick="js()">JavaScript</a></li>
+        <li><a href="#" onclick="jq()">jQuery</a></li>
+        <li><a href="#" onclick="wp()">WordPress</a></li>
+        <li><a href="#" onclick="pdf()">PDF</a></li>
+
+      </ul>
+    </div>
+    <div class="right">
+      <form action="">
+        <input type="text" placeholder="Search" onkeyup="searchFun()" id="myInput">
+        <button value="" onclick="search()">Search</button>
+      </form>
+    </div>
+  </nav>
+  <script>
+    function css() { window.location.href = 'css.html' }
+    function js() { window.location.href = 'JavaScript.html' }
+    function react() { window.location.href = 'index.html' }
+    function jq() { window.location.href = 'jQuery.html' }
+
+  </script>
+
+  <!-- search filter -->
+  <!-- <script>
+
+        const searchFun = () => {
+          var filter = document.getElementById('myInput').value.toUpperCase();
+          // var inp = document.getElementById('myInput');
+          let questionData = document.getElementsByClassName('accordion-button'); // To get the question data we targeted
+          for (var i = 0; i < questionData.length; i++) {
+            let qd = questionData[i].innerText;
+            // let re = new RegExp(inp.value, 'i');
+            if (qd.toUpperCase().indexOf(filter) > -1) {
+              // qd.replace(re, '<mark>$&</mark>');  // $& returns the entire matched string (some systems its $0)
+              questionData[i].style.color = "blue";
+              questionData[i].style.display = "";
+            } else {
+              questionData[i].style.display = "none";
+
+            }
+
+          }
+
+        }
+      </script> -->
+  <!-- search filter end -->
+  <!-- Link of js to fetch data of navbar dynamically -->
+  <script src="script.js"></script>
+</body>
+
+</html>

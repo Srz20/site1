@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>jQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+
+
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <ul>
+                <li><a href="#" onclick="css()">CSS</a></li>
+                <li><a href="#" onclick="react()">React</a></li>
+                <li><a href="#" onclick="js()">JavaScript</a></li>
+                <li><a href="#" onclick="jq()">jQuery</a></li>
+                <li><a href="#" onclick="wp()">WP</a></li>
+                <li><a href="#" onclick="pdf()" target="_blank">PDF</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <form action="">
+                <input type="text" placeholder="Search" onkeyup="searchFun()" id="myInput">
+                <button value="" onclick="search()">Search</button>
+            </form>
+        </div>
+    </nav>
+    <main>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        1. What is WordPress?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>
+                            WordPress is an Open Source Content Management System (CMS) and a blogging tool, based on
+                            PHP
+                            and MySQL. It is
+                            free of
+                            cost, and you can use it for any personal and commercial website.
+                            Wordpress is the most popular blogging system and used for more than 60 million websites. It
+                            is
+                            licensed under
+                            GPL.
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        2.Is a website on WordPress safe and secure
+
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>
+                            WordPress is safe and secure to operate. You need not worry about anything but, still, it is
+                            suggested to update
+                            your
+                            site with latest WordPress version to avoid hacking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        3. Is there any limitation for WordPress website?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>
+                            WordPress can be used for e-commerce sites, membership sites, photo galleries and any other
+                            type of site you can
+                            think. Following are some disadvantages of WordPress:
+                            oUsing several plugins can make the website heavy to load and run.
+                            oPHP knowledge is required to make modifications or changes in the WordPress website.
+                            oSometimes software needs to be updated to keep the WordPress up-to-date with the current
+                            browsers and mobile
+                            devices.
+                            Updating WordPress version leads to loss of data, so a backup copy of the website is
+                            required.
+                            oModifying and formatting the graphic images and tables is difficult.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        4. When was the Wordpress released initially? When is it announced as open source software?
+
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>
+
+                            WordPress was initially released on 27th May 2003 by Matt Mullenweg and Mike Little.
+                            WordPress was announced as
+                            open
+                            source in October 2009.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading35">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapse35" aria-expanded="false" aria-controls="flush-collapse35">
+                        5.
+
+                        What is the latest version of WordPress?
+                    </button>
+                </h2>
+                <div id="flush-collapse35" class="accordion-collapse collapse" aria-labelledby="flush-heading35"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>
+                            The latest version of WordPress is 4.9.8 released on Aug 02, 2018.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        6.What are the system requirements for installing WordPress?
+
+                    </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p>
+
+                            Database - MySQL 5.0 + <br>
+                            oWeb Server - <br>
+                            oWAMP (Windows) <br>
+                            oLAMP (Linux) <br>
+                            oXAMP (Multi-platform) <br>
+                            oMAMP (Macintosh) <br>
+                            oOperating System - Cross-platform <br>
+                            oBrowser Support - IE (Internet Explorer 8+), Firefox, Google Chrome, Safari, Opera <br>
+                            oPHP Compatibility - PHP 5.2+
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSeven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSeven" aria-expanded="false"
+                            aria-controls="flush-collapseSeven">
+                            7. What are the steps should be followed for installing WordPress?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSeven" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+
+                                oDownload Wordpress from www.wordpress.org <br>
+                                oExtract the downloaded files and upload it on your web server or localhost. <br>
+                                oOpen your web browser and navigate to the WordPress file path. Then you see the
+                                first screen of the WordPress
+                                installer. <br>
+                                oIn the next step, please select your preferred language. <br>
+                                oIn the next step, you see the information needed for the database before proceeding
+                                the WordPress installation. <br>
+                                oenter the details of your Mysql database. <br>
+                                oWordpress checks the details provided by you and gives you a confirmation screen. <br>
+                                oIn the next step, you have to enter the administration details. <br>
+                                oAfter entering the administration details, click on "Install WordPress" button. <br>
+                                oAfter successful installation, you get a screen stating "success." You can see the
+                                username and the password on this
+                                screen. <br>
+                                oEnter your username and password on the next screen and click 'login.'
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingEight">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseEight" aria-expanded="false"
+                            aria-controls="flush-collapseEight">
+                            8. Explain the components shown on the Home screen of WordPress
+                            ?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseEight" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+
+
+                                oDashboard menu: This component of home screen provides the navigation menu options
+                                for posts, media library, pages,
+                                and comments on the left side of the screen. <br>
+                                oScreen options: This component of the home screen display different types of
+                                widgets which can be shown or hidden on
+                                some screen. This component also contains the checkboxes to show or hide different
+                                screen options and also allow to
+                                customize sections on the admin screen. <br>
+                                oWelcome: This component of the home page help us to customize WordPress theme by
+                                clicking on the customize your site
+                                button. Also, the center column provides some of the useful links such as creating a
+                                page and view the front end of
+                                your web page, creating a blog post. Moreover, the last column contains links to the
+                                menus, widgets, settings related
+                                to comments. <br>
+                                oQuick Draft: This component of the home screen includes a mini post editor which is
+                                used to write, save, and publish
+                                the post from the admin dashboard. This include title of the draft followed by some
+                                notes about the draft and save it
+                                as a draft. <br>
+                                oWordpress news: This component of home screen displays the latest news regarding
+                                the latest software update of
+                                WordPress. <br>
+                                oActivity: This component of the home screen shows the latest comments, recent posts
+                                published. It also allows you to
+                                reply, edit, delete, approve, or disapprove the comments. You can also move comments
+                                to spam. <br>
+                                oAt a Glance: This component of home screen displays an overview of your blog?s
+                                posts, number of published posts and
+                                pages, and number of comments.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingNine">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseNine" aria-expanded="false"
+                            aria-controls="flush-collapseNine">
+                            9. Is it possible to SEO a WordPress site to show it on Google first page?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                WordPress has an inbuilt SEO search engine benefit. You can also have an additional
+                                plug-in in WordPress to help with
+                                SEO and rank on a favorite search engine like Google.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                            10. What is the difference between character 23 and x23?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Here 23 specifies the octal 23 and x23 determine the hex 23.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingEleven">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseEleven" aria-expanded="false"
+                            aria-controls="flush-collapseEleven">
+                            11. What are the hooks? Define different types of hooks in WordPress.
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseEleven" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingEleven" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Hooks enable users to create WordPress themes or plug-ins with shortcode without
+                                changing the original files.
+                                There are two types of hooks:
+                                Action hooks: Action hooks facilitate you to insert an additional code from an outside
+                                resource.
+                                Filter hooks: Filter hooks facilitate you to add content or text at the end of the post.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwelve">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwelve" aria-expanded="false"
+                            aria-controls="flush-collapseTwelve">
+                            12. What are the most exciting and useful features of WordPress?
+
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwelve" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingTwelve" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                These are the features which make WordPress very popular:
+                                oEasy to install and upgrade
+                                oIn-built SEO engine
+                                oFree and easy theme selection
+                                oFlexibility
+                                oMultilingual- available in more than 70 languages
+                                oOwn data- no unwanted advert on your website
+                                oFlexibility and Easy publishing option
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThirteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThirteen" aria-expanded="false"
+                            aria-controls="flush-collapseThirteen">
+                            13. Why does WordPress use MySQL?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThirteen" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingThirteen" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Following are the reasons to use MySQL with WordPress:
+                                oOpen source
+                                oExtremely fast
+                                oA widely available database server
+                                oSupported by low-cost Linux hosting
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFourteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFourteen" aria-expanded="false"
+                            aria-controls="flush-collapseFourteen">
+                            14. How many tables are there in WordPress by default?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFourteen" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingFourteen" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                At present version, there are about 11 tables in WordPress by default. You can check the
+                                number of tables in WordPress
+                                by phpMyAdmin.
+                                owp_commentmeta
+                                owp_comments
+                                owp_links
+                                owp_options
+                                owp_postmeta
+                                owp_posts
+                                owp_terms
+                                owp_term_relationships
+                                owp_term_taxonomy
+                                owp_usermeta
+                                owp_users
+                                Note: The number of tables may be changed with successive releases.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFifteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFifteen" aria-expanded="false"
+                            aria-controls="flush-collapseFifteen">
+                            15. What is by default prefix of WordPress tables?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseFifteen" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingFifteen" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                The wp_ is by default prefix of WordPress tables.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingSixteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseSixteen" aria-expanded="false"
+                            aria-controls="flush-collapseSixteen">
+                            16. In WordPress, objects are passed by value or by reference.
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseSixteen" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingSixteen" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                In WordPress, all objects are passed by value.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingEighteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseEighteen" aria-expanded="false"
+                            aria-controls="flush-collapseEighteen">
+                            17. How can you call a constructor for a parent class?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseEighteen" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingEighteen" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                You can call a constructor for a parent class by this way:
+                                Parents:: constructor($value)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingNineteen">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseNineteen" aria-expanded="false"
+                            aria-controls="flush-collapseNineteen">
+                            18. In which cases, WordPress is not suitable for a website?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseNineteen" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingNineteen" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                These are some situations when WordPress is not recommended:
+                                oIf the client is working on the non-CMS based project.
+                                oFor sophisticated and innovative e-commerce sites.
+                                oSites which require custom scripting solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwenty">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwenty" aria-expanded="false"
+                            aria-controls="flush-collapseTwenty">
+                            19. Is WordPress the best CMS or any other CMS is better than WordPress?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwenty" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingTwenty" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                No doubt WordPress is good CMS, but Drupal and Joomla are considered better CMS than
+                                WordPress to work.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwentyOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwentyOne" aria-expanded="false"
+                            aria-controls="flush-collapseTwentyOne">
+                            20. Which is considered more secured wordpress.com or wordpress.org?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwentyOne" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingTwentyOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Wordpress.com is relatively more secure than wordpress.org because they limit the themes
+                                and does not allow plugin's
+                                installation. However, security depends on the hosting company of your website and also
+                                what steps they are taking to
+                                prevent the security problems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwentytwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwentytwo" aria-expanded="false"
+                            aria-controls="flush-collapseTwentytwo">
+                            21. Explain posts in WordPress.
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwentytwo" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingTwentytwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Posts allow you to write a blog and post it on your site. They are listed in reverse
+                                chronological order on the front
+                                page of your blog..f
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwentythree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwentythree" aria-expanded="false"
+                            aria-controls="flush-collapseTwentythree">
+                            22. Explain pages in WordPress.
+                            .
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwentythree" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingTwentythree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                Pages are different from posts. They are static, and they do not change often. You can
+                                add pages containing
+                                information about you and your site.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwentyfour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwentyfour" aria-expanded="false"
+                                aria-controls="flush-collapseTwentyfour">
+                                23. What is the difference between WordPress posts and pages?
+
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwentyfour" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwentyfour" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>
+                                    WordPress posts are content published on a site with an exact date and time. They
+                                    can be categorized systematically by
+                                    category and tags. They are listed in reverse chronological order on a website.
+                                    WordPress pages are static and do not frequently change such as contact us, about
+                                    us, privacy policy. They don?t have
+                                    a date and time published. However, the database stores their published date and
+                                    time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwentyfive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwentyfive" aria-expanded="false"
+                                    aria-controls="flush-collapseTwentyfive">
+                                    24.What is a loop in WordPress?
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwentyfive" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwentyfive" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <p>
+                                        WordPress uses PHP codes to display posts. This PHP code is known as a loop.
+
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwentysix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwentysix" aria-expanded="false"
+                                    aria-controls="flush-collapseTwentysix">
+                                    25. How can you disable WordPress comment?
+
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwentysix" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwentysix" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <p>
+                                        You can disable the WordPress comment on the dashboard. On the panel, under the
+                                        options- discussion you find "Allow
+                                        people to post the comment." Uncheck this to disable comment.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThirtytwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThirtytwo" aria-expanded="false"
+                                        aria-controls="flush-collapseThirtytwo">
+                                        26. How can you edit a WordPress comment?
+
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThirtytwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingThirtytwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            You can edit WordPress comment using the dashboard. From the panel, under
+                                            the Comments option, select edit to edit a
+                                            comment.
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwentyeight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwentyeight" aria-expanded="false"
+                                        aria-controls="flush-collapseTwentyeight">
+                                        27. Explain moderate comment in WordPress.
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwentyeight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwentyeight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            Comments by visitors on a post are not published directly unless the admin
+                                            provides it. It is called moderation. To
+                                            change comment moderation setting, select Settings option from the dashboard
+                                            and check the option "Comment must be
+                                            manually approved."
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwentynine">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwentynine" aria-expanded="false"
+                                        aria-controls="flush-collapseTwentynine">
+                                        28. How to allow only registered users to comment on WordPress?
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwentynine" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwentynine" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+
+                                            If you don't want a comment from a new user on your blog, check the option
+                                            "Users must be registered and logged in to
+                                            comment" from Discussions under the Settings option..
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingTwentynine1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwentynine1" aria-expanded="false"
+                                        aria-controls="flush-collapseTwentynine1">
+                                        29. Explain Avatar and Gravatar in WordPress.
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwentynine1" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwentynine1" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            Word Avatar is used for a user's profile image in online communications.
+                                            Gravatar is a web-based service which allows
+                                            its users to use the Avatar image.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading30">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse30" aria-expanded="false"
+                                        aria-controls="flush-collapse30">
+                                        30. How can you handle the situation if your WordPress site is hacked?
+                                        .
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse30" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-heading30" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            You should follow these steps:
+                                            oInstall security plugins like WP security
+                                            oRe-install the latest version of WordPress
+                                            oChange password and user-ids for all your users
+                                            oCheck your themes and plug-ins are up to date
+
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading31">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse31" aria-expanded="false"
+                                        aria-controls="flush-collapse31">
+                                        31. Explain Categories in WordPress.
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse31" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-heading31" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+
+                                            Categories allow a user to divide its content into different sections.
+                                            Different topics publishing on a single website
+                                            can be divided into different groups. It tells a reader what a post is about
+                                            and they can easily find their content
+                                            from a lot.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading32">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse32" aria-expanded="false"
+                                        aria-controls="flush-collapse32">
+                                        32. How to convert a category into the tag?
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse32" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-heading32" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            WordPress provides you an option to change category into tag and tag into a
+                                            category. For this, you need to install
+                                            Categories and Tags Converter from Import option under Tools section.
+                                            More
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-heading34">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapse34" aria-expanded="false"
+                                        aria-controls="flush-collapse34">
+                                        33. Explain Tags in WordPress.
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse34" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-heading34" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+                                            With the help of tags, similar posts can be grouped. Hence, it makes more
+                                            comfortable for the users to search for a
+                                            particular post. Tags are similar to categories but still different.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                        aria-controls="flush-collapseFive">
+                                        34.Explain the difference between WordPress Categories and Tags.
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFive" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+
+                                            WordPress Categories are broad-ranging. It helps a user to identify about a
+                                            blog. It is possible for a post to have
+                                            more than one category. A post must have at least one category.
+                                            WordPress Tags are like categories, but they are used to describe a post
+                                            more specifically. Tags are not necessary for
+                                            every post.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingEight">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseEight" aria-expanded="false"
+                                        aria-controls="flush-collapseEight">
+                                        35.How many types of users WordPress have?
+
+
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseEight" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>
+
+                                            WordPress user role determines access permission to the users of a WordPress
+                                            site.
+                                            oAdministrator: They have full rights over a site.
+                                            oEditor: They deal with the content section of a website.
+                                            oAuthor: They only deal with their posts. They can delete their post even
+                                            after publishing.
+                                            oContributor: A contributor doesn't have the right to publish their post or
+                                            page. They need to send it to the
+                                            administrator for review.
+                                            oSubscriber: Users who are subscribed to your site can log in and update
+                                            their profile.
+                                            oFollower: They don't have any right. They can only read and comment on your
+                                            post.
+                                            oViewer: They can only read and comment on a post.
+                                            More details...
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingSixteen">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseSixteen"
+                                            aria-expanded="false" aria-controls="flush-collapseSixteen">
+                                            36.Define debug a JavaScript code?
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseSixteen" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingSixteen" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div class="edit_image">
+                                                <img src="images/debug.png" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwentyOne">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseTwentyOne"
+                                            aria-expanded="false" aria-controls="flush-collapseTwentyOne">
+                                            37.Define arrow function.
+
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwentyOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingTwentyOne"
+                                        data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div class="edit_image">
+                                                <img src="images/arrow.png" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwentytwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwentytwo"
+                                                aria-expanded="false" aria-controls="flush-collapseTwentytwo">
+                                                38.What are the different ways an HTML element can be accessed in a
+                                                JavaScript code?
+                                                Or
+                                                Define DOM AND EVENTS.
+
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwentytwo" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTwentytwo"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/DOM.png" class="img-fluid" alt="">
+                                                </div>
+                                                <p>Follow the path for form events</p>
+                                                <p>C:\Users\pione\OneDrive\Desktop\FED\JAVASCRIPT\13. Javascript Form
+                                                    Event</p>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwentyfour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwentyfour"
+                                                aria-expanded="false" aria-controls="flush-collapseTwentyfour">
+                                                39.What is DOM? What is the use of document object?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwentyfour" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTwentyfour"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body"> Flex box is one-dimensional system (either in a
+                                                column or a row). It is
+                                                used to
+                                                make one dimensional responsive layout without using position and float.
+                                            </div>
+                                            <div class="edit_image">
+                                                <img src="images/flex1.png" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingThirtyfour">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseThirtyfour"
+                                                aria-expanded="false" aria-controls="flush-collapseThirtyfour">
+                                                40.Difference between client-side and server-side or client-side
+                                                scripting and server-side
+                                                scripting.
+
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThirtyfour" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingThirtyfour"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">We use overflow property to fix the overflow
+                                                issues when more content
+                                                added to
+                                                a
+                                                fixed height element.
+                                            </div>
+                                            <div class="edit_image">
+                                                <img src="images/overflow.png" class="img-fluid" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingtf">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapsetf"
+                                                aria-expanded="false" aria-controls="flush-collapsetf">
+                                                41.Rest parameter and spread operator OR Write a programme to
+                                                add/multiply/divide the numbers.
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapsetf" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingtf" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/rest_spread.png" class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTS">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTS"
+                                                aria-expanded="false" aria-controls="flush-collapseTS">
+                                                42. Promises & Promise.all in JavaScript.
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTS" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTS" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    Promises are used to handle asynchronous operations in JavaScript.
+
+                                                    Before promises, callbacks were used to handle asynchronous
+                                                    operations. But due to the limited
+                                                    functionality
+                                                    of callbacks, using multiple callbacks to handle asynchronous code
+                                                    can lead to unmanageable code
+                                                    or
+                                                    call
+                                                    back hell. So, Promise was introduced in ES6 ( ECMAScript 2015).
+
+                                                    Promise object has four states -
+                                                <ul>
+                                                    <li>
+                                                        Pending - Initial state of promise. This state represents that
+                                                        the promise has neither been
+                                                        fulfilled
+                                                        nor
+                                                        been rejected, it is in the pending state.
+                                                    </li>
+                                                    <li>Fulfilled - This state represents that the promise has been
+                                                        fulfilled, meaning the async
+                                                        operation
+                                                        is
+                                                        completed.</li>
+                                                    <li>Rejected - This state represents that the promise has been
+                                                        rejected for some reason, meaning
+                                                        the
+                                                        async
+                                                        operation has failed.</li>
+                                                    <li>Settled - This state represents that the promise has been either
+                                                        rejected or fulfilled.</li>
+                                                    <li>A promise is created using the Promise constructor which takes
+                                                        in a callback function with
+                                                        two
+                                                        parameters, resolve and reject respectively.</li>
+                                                    <li>resolve is a function that will be called when the async
+                                                        operation has been successfully
+                                                        completed.
+                                                    </li>
+                                                    <li>
+                                                        reject is a function that will be called, when the async
+                                                        operation fails or if some error
+                                                        occurs.
+                                                    </li>
+                                                </ul>
+                                                <div class="edit_image">
+                                                    <img src="images/promise1.png" class="img-fluid" alt="">
+                                                </div>
+                                                <div class="edit_image">
+                                                    <img src="images/promise2.png" class="img-fluid" alt="">
+                                                </div>
+                                                <div class="edit_image">
+                                                    <img src="images/promise3.png" class="img-fluid" alt="">
+                                                </div>
+                                                </p>
+                                                PROMISE.ALL
+                                                <p>
+                                                    If all the promise is true then then call back function will execute
+                                                    and if any of the promises
+                                                    is
+                                                    false
+                                                    then catch call back will execute.
+                                                </p>
+                                                <P>
+                                                    Syntax
+                                                </P>
+                                                <p>
+                                                    Promise.all([p1, p2, p3]).then((result) => { console.log(result)
+                                                    }).catch((error) => {
+                                                    console.log(error)
+                                                    }); <br>
+                                                    Here, p1, p2, p3 are three promises.
+                                                </p>
+                                                <div class="edit_image">
+                                                    <img src="images/promise_all.png" class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTSEVEN">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTSEVEN"
+                                                aria-expanded="false" aria-controls="flush-collapseTSEVEN">
+                                                43.Define map, reducer.
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTSEVEN" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTSEVEN"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    Map method is used to create a new array by adding, multiplying the
+                                                    values of an array. <br>
+                                                    It also used to make new array from the multidimentional objects by
+                                                    taking out the values.
+                                                    usuallY don't print it. <br>
+                                                    It has three parameters (value, i,array).<br>
+                                                    value is for value like
+                                                    in var a 1,2,3....,10 are values, <br> i is index and array means
+                                                    complete array.
+                                                </p>
+                                                <div class="edit_image">
+                                                    <img src="images/map_reducer.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTeight">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTeight"
+                                                aria-expanded="false" aria-controls="flush-collapseTeight">
+
+                                                44.Pure and Impure functions.
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTeight" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTeight"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/date_mathod.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTnine">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTnine"
+                                                aria-expanded="false" aria-controls="flush-collapseTnine">
+
+                                                45.AJAX,
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTnine" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTnine"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/ajax.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingFourty">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseFourty"
+                                                aria-expanded="false" aria-controls="flush-collapseFourty">
+
+                                                46.Immediately Invoked Function in JavaScript (v)
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseFourty" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingFourty"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/ief.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading477">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse477"
+                                                aria-expanded="false" aria-controls="flush-collapse477">
+                                                47. Guess the output.
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse477" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-heading477" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/guess.png" class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading42">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse42"
+                                                aria-expanded="false" aria-controls="flush-collapse42">
+                                                48.Set, weakSet, map and weakMap
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse42" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-heading42" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/weakset_weakmap.png" class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading491">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse491"
+                                                aria-expanded="false" aria-controls="flush-collapse491">
+                                                49.Mobile first Approach?
+
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse491" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-heading491" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                Refer notes
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading522">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse522"
+                                                aria-expanded="false" aria-controls="flush-collapse522">
+                                                50.What is NaN property in JavaScript?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse522" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-heading522" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/NAN.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading75">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse75"
+                                                aria-expanded="false" aria-controls="flush-collapse75">
+                                                51.How to validate a form in JavaScript?
+                                                Or How to submit a form on button click?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse75" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-heading75" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/form_validation.png" class="img-fluid" alt="">
+                                                </div>
+                                                <div class="edit_image">
+                                                    <img src="images/form_submit_onClick.png" class="img-fluid" alt="">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-heading76">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapse76"
+                                                aria-expanded="false" aria-controls="flush-collapse76">
+                                                52.How to validate email in JavaScript?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapse76" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-heading76" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="edit_image">
+                                                    <img src="images/email_validation.png" class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwentyfive">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwentyfive"
+                                                aria-expanded="false" aria-controls="flush-collapseTwentyfive">
+                                                53. What is the use of window object?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwentyfive" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTwentyfive"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    Using display property(display: none). It’s not available for screen
+                                                    readers. The element will not
+                                                    exist
+                                                    in
+                                                    the DOM if display: none is used.
+                                                </p>
+                                                <p>
+
+                                                    Using visibility property(visibility: hidden), will take up the
+                                                    space of the element. It will be
+                                                    available
+                                                    to screen reader users. The element will actually be present in the
+                                                    DOM, but not shown on the
+                                                    screen.
+
+                                                </p>
+                                                <p>
+                                                    Using position property (position: absolute). Make it available
+                                                    outside the screen.
+                                                </p>
+
+                                                <xmp>
+                                                    p {
+                                                    display: none;
+                                                    }
+                                                    div {
+                                                    visibility: hidden;
+                                                    }
+                                                    main {
+                                                    position: absolute;
+                                                    top: -100px;
+                                                    }
+                                                    /* Yes screen or viewport se upar chala gya isliye chhup gya */
+                                                </xmp>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwentyseven">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwentyseven"
+                                                aria-expanded="false" aria-controls="flush-collapseTwentyseven">
+                                                54.What are Import and Export in JavaScript?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwentyseven" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTwentyseven"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <p>
+                                                    The keyword initial can be used to reset or restore its default
+                                                    value.
+                                                    We know that every property has its default value like paragraph has
+                                                    default color “black” which
+                                                    will
+                                                    appear on the browser when we don’t reset/give any color to
+                                                    paragraph tag.
+                                                </p>
+                                                <p>
+                                                    Similarly the default font-size of any paragraph is 16px which will
+                                                    apply if we don’t give any
+                                                    font-size. So, if we want to know the default value of any property
+                                                    then we can use initial. For
+                                                    example
+                                                    p{color:initial},
+                                                    it will set black color in the paragraph because initial return the
+                                                    default value. Similarly,
+                                                    p{color:inherit} will give the color given in parent of paragraph
+                                                    tag if any else return the
+                                                    default
+                                                    one.
+                                                </p>
+                                                <div class="link">
+                                                    <a href="https://www.youtube.com/watch?v=N8tFrMZp_wA">For more
+                                                        details</a>
+                                                </div>
+                                                <p>More images available in pdfnotes</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwentyeight">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#flush-collapseTwentyeight"
+                                                aria-expanded="false" aria-controls="flush-collapseTwentyeight">
+                                                55.What are some of the JavaScript frameworks and their uses?
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwentyeight" class="accordion-collapse collapse"
+                                            aria-labelledby="flush-headingTwentyeight"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">The CSS3 calc() function allows us to perform
+                                                mathematical operations on
+                                                property values. Instead of declaring, for example, static pixel values
+                                                for an element's width, we
+                                                can
+                                                use
+                                                calc() to specify that the width is the result of the addition of two or
+                                                more numeric values.
+                                                <p>Refer audio for more clarification</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div>
+
+                                <!-- scroll bar  -->
+                                <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+                                <!-- scroll bar  -->
+
+                                <!-- Option 1: Bootstrap Bundle with Popper -->
+                                <script
+                                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                                    crossorigin="anonymous">
+                                    </script>
+                                <!-- scroll bar script -->
+                                <script>
+                                    // Get the button
+                                    let mybutton = document.getElementById("myBtn");
+
+                                    // When the user scrolls down 20px from the top of the document, show the button
+                                    window.onscroll = function () { scrollFunction() };
+
+                                    function scrollFunction() {
+                                        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                                            mybutton.style.display = "block";
+                                        } else {
+                                            mybutton.style.display = "none";
+                                        }
+                                    }
+
+                                    // When the user clicks on the button, scroll to the top of the document
+                                    function topFunction() {
+                                        document.body.scrollTop = 0;
+                                        document.documentElement.scrollTop = 0;
+                                    }
+                                    function css() { window.location.href = 'css.html' }
+                                    function js() { window.location.href = 'JavaScript.html' }
+                                    function react() { window.location.href = 'index.html' }
+                                    function jq() { window.location.href = 'jQuery.html' }
+                                    function pdf() { window.location.href = 'pdf.html' }
+                                    function wp() { window.location.href = 'wordPress.html' }
+
+
+                                </script>
+                                <script src="script.js"></script>
+
+    </main>
+    <script>
+
+        const searchFun = () => {
+            var filter = document.getElementById('myInput').value.toUpperCase();
+            // var inp = document.getElementById('myInput');
+            let questionData = document.getElementsByClassName('accordion-button'); // To get the question data we targeted
+            for (var i = 0; i < questionData.length; i++) {
+                let qd = questionData[i].innerText;
+                // let re = new RegExp(inp.value, 'i');
+                if (qd.toUpperCase().indexOf(filter) > -1) {
+                    // qd.replace(re, '<mark>$&</mark>');  // $& returns the entire matched string (some systems its $0)
+                    questionData[i].style.color = "blue";
+                    questionData[i].style.display = "";
+                } else {
+                    questionData[i].style.display = "none";
+
+                }
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

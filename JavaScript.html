@@ -1,0 +1,3174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+
+</head>
+
+<body>
+  <nav>
+    <div class="left">
+      <ul>
+        <li><a href="#" onclick="css()">CSS</a></li>
+        <li><a href="#" onclick="react()">React</a></li>
+        <li><a href="#" onclick="js()">JavaScript</a></li>
+        <li><a href="#" onclick="jq()">jQuery</a></li>
+        <li><a href="#" onclick="wp()">WP</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <form action="">
+        <input type="text" placeholder="Search" onkeyup="searchFun()" id="myInput">
+        <button value="" onclick="search()">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <main>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOneee">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOneee" aria-expanded="false" aria-controls="flush-collapseOneee">
+            1. Web Worker and web socket?
+          </button>
+        </h2>
+        <div id="flush-collapseOneee" class="accordion-collapse collapse" aria-labelledby="flush-headingOneee"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              We have workers in JavaScript and there are three sections of workers.
+              Web Worker, Web Socket and Service Worker.
+              These are script that run in the background without interfering the UI.
+              In another word, we can say that these workers run in a seperate thread than the main
+              browser thread which helps to improve the application performance because it does not
+              bother excessive activities of the main thread.
+            </p>
+            <h3>DIFFERENCES</h3>
+            <p>
+              The web workers and web socket have DOM access whereas service worker has no dom access because
+              it runs on a worker context.
+              The web socket is actually a part of main thread that helps to access and manipulate the DOM.
+            </p>
+            <h3>WEB WORKER</h3>
+            We know that our HTML perser, parses the html code line by line and as soon as it finds the
+            script tag, it blocks the entire UI until we the output of the script. So, in order ot overcome from this
+            blocking
+            nature, we use web worker. Web worker actually runs the script tag in a different environment so
+            that our complex operations don't bock the UI and generate the script output from different thread and
+            provide the output.
+
+            <p>
+              Web workers are used to run the code in a background script.
+            </p>
+            <p>
+              We can create a worker object using contstructor worker()
+            </p>
+            <p>
+              Workers run in a different global context
+            </p>
+            <p>
+              We use workers to do complex operations without interfering the UI
+            </p>
+            <P>
+              We can sent and accept messsages or data from UI using events.
+            </P>
+
+            var workerObj = new Worker('workerFileName.js'); <br>
+            We use onMessage(); To receive the messsages
+            postMessage(); to send the data or messages
+            <h3>
+              Advantages
+            </h3>
+            <p>
+              Helps in complex computing
+            </p>
+            <p>
+              Does not block the UI
+            </p>
+            <P>
+              Optimize the program performance
+            </P>
+            <h3>
+              Disadvantages
+            </h3>
+            <p>
+              Does not have access to parent, window and documnent object.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            1.Define JavaScript? Who developed JavaScript, and what was the first name of
+            JavaScript? What is argument object? Or How can you get the type of arguments passed to a funtion?
+            How can you get the total number of arguments passed to a function?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              JavaScript is a scripting language. It is different from Java language. It is an object-based,
+              lightweight,
+              cross-platform translated language. It is used for client-side and server-side development. It is
+              widely
+              used for client-side validation. The JavaScript code can be inserted into HTML pages that can be
+              understood
+              and executed by web browsers because the JavaScript Translator (embedded in the browser) is
+              responsible
+              for
+              translating the JavaScript code for the web browser.
+            </p>
+
+            <p>
+              The browser does not interpret server side scripting language because it can interpret or execute
+              HTML,
+              CSS,
+              DXTML and Client Side Script. We need to add an interpreter to interpret or execute server side script
+              installed in the server called “Zen-engine”. PHP and .NET are Server Side Script.
+              Note- Server Side Script is not available at the server because it is sent from the browser.
+            </p>
+            <p>
+              JavaScript was developed by Brendan Eich, who was a Netscape programmer. Brendan Eich developed this
+              new
+              scripting language in just ten days in the year September 1995. At the time of its launch, JavaScript
+              was
+              initially called Mocha. After that, it was called Live Script and later known as JavaScript.
+            </p>
+            <p>
+              Argument object in javaScript represents arguments passed to a function.
+            </p>
+            <p>
+              <xmp>
+                <script>
+                  function abc(a) {
+                    console.log(typeof (a));
+                  }
+                  abc();  //undefined
+                  abc(1); // number
+                  abc("1");  // string
+                </script>
+
+                //To know the number of arguments//
+
+                <script>
+                  function abc() {
+                    console.log(arguments.length);  //4
+                    document.write(arguments.length);  // 4
+                  }
+                  abc(1, 2, 3, 4);  //4
+                </script>
+              </xmp>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            2.What are the features of JavaScript? Or What are the advantages of JavaScript over other web
+            technologies?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              These are the features of JavaScript:
+            </p>
+            <ul>
+              <li> Open-source
+              </li>
+              <li>It is a patter that is based on the concept of "objects", which can contain data and code.
+              </li>
+              <li> Interpreted programming language:-Since JavaScript is an 'interpreted' language. it reduces the
+                time
+                required by other programming languages like Java for compilation. So, it is fast in comparision
+                to
+                others.
+              </li>
+              <li> Integration with other back-end and front-end technologies
+              </li>
+              <li>Lightweight
+              </li>
+              <li>Used especially for the development of network-based applications</li>
+              <li>
+                JavaScript has countless frameworks and libraries that are extensively used for developing web
+                applications and games of all kinds.
+              </li>
+              <li>
+                Cross-platform compatible: We know that when we need to create app, we need to pick a platform to create
+                the app for, such as Android, IOS or for windows store. If we use native technologies we need to write
+                code
+                in JAVA to create Android App, Object C for IOS and C# and Xaml for Windows but learning JavaScript, we
+                can
+                create all.gn
+              </li>
+              <li>
+                There is no need for a web page to reload when running JavaScript. For example, form input
+                validation.
+              </li>
+              <li>
+                JavaScript helps in making the UI of web applications look and feel much better.
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree1" aria-expanded="false" aria-controls="flush-collapseThree1">
+            3. shalow copy and deep copy(x`object copy)?
+          </button>
+        </h2>
+        <div id="flush-collapseThree1" class="accordion-collapse collapse" aria-labelledby="flush-headingThree1"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+
+            <p>
+              Whenever we assign or copy one object to another object like user = obj, we don't copy the
+              data like sarfraz to bruce but reference. Suppose, I have a hard disk in which we create
+              an object and put any data like sarfraz and when we copy this object to the user like user = obj, it will
+              not copy the data but location and when we change the value later, it will also change the
+              value of first one which was name:sarfraz and now it will be bruce so both object will have the same value
+              bruce.
+              but we want that when we copy one object to another object, the value should be
+              different for both the objects and to achieve this, we use shallow copy and deep copy.
+              <!-- This process is called copying the object. There are two ways to copy the object first is by value
+              second is by reference. -->
+            </p>
+            <xmp style="overflow-x: auto;">
+              <script>
+                let obj = {
+                  name: "sarfraz"
+                };
+                console.log(obj);  // name:  "sarfraz"
+
+                let user = obj;
+                user.name = "bruce"
+                console.log(obj);  //  name:  "bruce"
+                console.log(user);  //  name:  "bruce"
+                // Note: After copying to another object, the first object value will also be bruce becuase
+                // it copies the memory location
+              </script>
+            </xmp>
+            <div class="edit_image">
+              <img src="images/shallow.png" class="img-fluid" alt="">
+            </div>
+            <p>Use of shallow copy</p>
+            <p>
+              We use shallow copy by Object.assign({}, obj) and second way is the create one object and use
+              destructuring inside it like let user = {...obj} to create shallow copy and will get different values for
+              both objects.
+
+            </p>
+            <p>Question 1 :- Do we copy memory location or value when we copy one object</p>
+            <p>Memory Location</p>
+            <p>Question 2 :- Difference between shallow copy and deep copy</p>
+            <p>In shallow copy, main object is copied but in Deep copy, we can also copy the nested objects</p>
+            <p>Question 3 :- What do we actually perform when we use shallow and deep copy</p>
+            <p>We copy value in the place of memory location </p>
+            <p>Question 4 :- What are the ways to use shallow and deep copy?</p>
+            <p>There are two ways to use shallow copy 1. object.assign and 2. object destructuring and for deep Copy
+              we can use json.parse and inside it json.stringify but in this method, date and function do not
+              work so to fix this, we can use lodash library or we can do it manually using for loop and copy each key
+              but it is very lengthy process. It is better to use lodash CND path and then let user = _.cloneDeep(obj);
+            </p>
+            <xmp style="overflow-x: auto;">
+              <script>
+                let obj = {
+                  name: "sarfraz"
+                };
+                console.log(obj);  // name:  "sarfraz"
+                // let user = Object.assign({}, obj);  // First way to shallow copy
+                let user = { ...obj };  // Second way to shallow copy
+                user.name = "bruce";
+                console.log(obj);  //  name:  "sarfraz"
+                console.log(user);  //  name:  "bruce"
+              </script>
+            </xmp>
+            <p>Deep Copy</p>
+            <p>
+              Now, deep copy comes into the picture when we have nested object.
+            </p>
+            <xmp style="overflow-x: auto;">
+              let obj = {
+              name: "sarfraz",
+              address: {
+              city: "Noida",
+              state: 'UP'
+              }
+              };
+
+              let user = { ...obj };
+              user.address.city = "Gurgaon"
+              console.log(obj); // obj city will be gurgaon which is a problem and to fix this we use deep copy
+              console.log(user); // user city will be gurgaon
+              </script>
+            </xmp>
+            <div class="edit_image">
+              <img src="images/deep_copy.png" class="img-fluid" alt="">
+            </div>
+            <p>
+              Here, by using both mehtods of shallow copy, we will not get the correct output becuase both the
+              methods of shallow copy fix the issue upto one lavel of coping object and to fix the second lavel or
+              object
+              inside object like obj.address.city, we need to use deep copy.
+            </p>
+            <p>
+              Here, to fix this issue, we need to convert first into JSON STRING using JSON.stringify() and then we need
+              to convert this json object into normal object using JSON.parse();
+            </p>
+            <xmp style="overflow-x: auto;">
+              <script>
+                let obj = {
+                  name: "sarfraz",
+                  address: {
+                    city: "Noida",
+                    state: 'UP'
+                  }
+                };
+
+                let user = JSON.parse(JSON.stringify(obj));
+                user.address.city = "Gurgaon"
+                console.log(obj);  // obj city will Noida
+                console.log(user);  // user city will be gurgaon
+              </script>
+            </xmp>
+            <div class="edit_image">
+              <img src="images/deep_copy2.png" class="img-fluid" alt="">
+            </div>
+            <p>Limitations of Deep copy</p>
+
+            <div class="edit_image">
+              <img src="images/deep_copy3.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/lodah.png" class="img-fluid" alt="">
+            </div>
+
+            <div class="link">
+              <a href="https://www.youtube.com/watch?v=mk7RpyHMUrU">For more details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree2" aria-expanded="false" aria-controls="flush-collapseThree2">
+            3. Can we use const or let to define an object to get the properites with values?
+          </button>
+        </h2>
+        <div id="flush-collapseThree2" class="accordion-collapse collapse" aria-labelledby="flush-headingThree2"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Yes.
+            <xmp style="overflow-x: auto;">
+              <script>
+                const obj = {
+                  name: "sarfraz",
+                  age: 25
+                }
+                console.log(obj.name);  // sarfraz
+                for (key in obj) {
+                  document.write(key + " : " + obj[key] + '<br>')
+                }
+                // name : sarfraz
+                // age : 25
+              </script>
+            </xmp>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            3.List some of the disadvantages of JavaScript. Is javaScript is case-sensitive?
+
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <ul>
+              Some of the disadvantages of JavaScript are:
+              <li>
+                No support for multi-threading.</li>
+              <li>
+                It will stop the rendering if you make any mistake in the code and difficult to find.
+              </li>
+              <li>
+                No support for multi-processing
+              </li>
+              <li>
+                JavaScript codes are always visible to everyone.( by control+U, inspect, F12) so it is not
+                secured.
+              </li>
+              <li>
+                We know that the code of JavaScript is executed on the user’s or client machine and in some case
+                it is
+                used for
+                malicious purposes and because of this some people disable the JavaScript.
+              </li>
+              <li> No support for networking applications</li>
+              <li>Yes, It is case-sensitive.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            4.How do you create an object in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <ul>
+              <li>Using Object literal</li>
+              <li>Using Create method</li>
+              <li>Using constructor method</li>
+            </ul>
+            Refer question no. 8 in notes/pdf for more details.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+            5.How to read or write properties of an object in javaScript?
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            We can read or write properties of an object in javaScript using dot and bracket notation as follows:- <br>
+            object.firstName <br>// We will get Sarfraz if first name set as Sarfraz. <br>
+            We use bracket notation if a property contains special character and the property is stored in a varaiable.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingEleven">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+            6.String, Math, Number, Date and Array Methods and How to create an Array in JavaScript and read elements
+            of an array in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapseEleven" class="accordion-collapse collapse" aria-labelledby="flush-headingEleven"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/sring_method.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/Number_Math.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/date_mathod.png" class="img-fluid" alt="">
+            </div>
+            <p>
+              An array is a collection of elements or values. We need array because when we use or declare a
+              variable, it can store only one value at a time and to store multiple values under one name an
+              'Array' is declared. <br>
+              An array can store any type of data. <br>
+              There are two ways to define or declare the array. <br>
+              1. Using bracket such as array = [a, 1, "sarfraz", 25]; <br>
+              1. Using array object such as array1 = new Array[a, 1, "sarfraz", 25]; <br>
+            </p>
+
+            <div class="edit_image">
+              <img src="images/array_method1.png" class="img-fluid" alt="">
+            </div>
+            <p>Use of some, every,find and filter</p>
+            <p>All the four array methods are almost same. Some method returns true if any value or element in the
+              given array passes the test else false. <br>
+              The same is the case with every if all the values or elements
+              in the given array pass the test else false. <br>
+              find return the first value that passes the test and filter return all the values in the form of an
+              Array
+              that passes the test. <br>
+            <P>
+              find() is used to find only the first value that passes the test or condition not the remaining
+              value of any variable or Array and findIndex() find the index of the first value that clears the
+              test. filter function will give a new array which has all the elements that
+              passes the condition. toString will convert the array into string. Once it is converted to
+              string, no function of array will be applicable. valueOf is a default function of array. It will
+              give the same result when you print var a. fill function is used to change the all elements to a
+              new element you write as fill(Ram). In this case, var ages =[20, 19, 18, Sar] will become Ram,
+              Ram, Ram, Ram. Since all elements are there in var ages so Ram will be printed 4 times.</p>
+            </P>
+            <div class="edit_image">
+              <img src="images/array_method2.png" class="img-fluid" alt="">
+            </div>
+            </p>
+            <p>We can use for loop and for of loop to iterate the element of an array, explained in loop</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading428">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse428" aria-expanded="false" aria-controls="flush-collapse428">
+            7.Define all loops, generator, iterator.
+
+          </button>
+        </h2>
+        <div id="flush-collapse428" class="accordion-collapse collapse" aria-labelledby="flush-heading428"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/loop_all.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading464">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse464" aria-expanded="false" aria-controls="flush-collapse464">
+            8.Name the types of functions. Or Define named and anonymous function Or Can we assign anonymous
+            function
+            to a variable and can we pass anonymous function as an argument to another function?
+            Or How can you get the type of arguments passed to a funtion?
+
+          </button>
+        </h2>
+        <div id="flush-collapse464" class="accordion-collapse collapse" aria-labelledby="flush-heading464"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/types_of_function.png" class="img-fluid" alt="">
+            </div>
+            <p>
+              Yes, you can assign an anonymous function to a variables
+            </p>
+            <p>
+              Yes, you can pass an anonymous function to an argument as well.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading14">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse14" aria-expanded="false" aria-controls="flush-collapse14">
+            9.What is the ‘this’ keyword in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapse14" class="accordion-collapse collapse" aria-labelledby="flush-heading14"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/this_keyword.png" class="img-fluid" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwelve">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+            10.What are the scopes of a variable in JavaScript and scope chain? Or
+            What are the valid scopes of a variable in JavaScript(Global and Local variables)? Or
+            Which type of variable among Global and local, takes precedence over other if names are same(Local)? <br>
+            Lexical Scope.
+
+          </button>
+        </h2>
+        <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/scope.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFifteen55">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFifteen55" aria-expanded="false" aria-controls="flush-collapseFifteen55">
+            11.1 .Define lexical scope?
+          </button>
+        </h2>
+        <div id="flush-collapseFifteen55" class="accordion-collapse collapse" aria-labelledby="flush-headingFifteen55"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              Lexical scope is the definition area of an expression. In other words, an item's lexical scope is the place in which the item got created. <br>
+              Lexical scope tells the range of anything. we use arrow function when we have the issue of lexical scope.
+              For example:-If we daclare let variable inside a function, we will say that the scope of let variable
+              is till this function or the lexical scope of let variable is this function. <br>
+              We also know that when we declare any object and if we want to use any other property of the same object
+              we use this keyword. <br>
+              We have also the concept of "lexical scope of this" <br>
+              Sometimes, we miss the "this keyword" of any object inside the same object and that time we check the
+              lexical
+              scope and fix the issue using arrow function becuase it does not its own this keyword.
+            </p>
+            <h3>Step 1</h3>
+            <xmp style="overflow:auto;">
+              <script>
+                let obj = {
+                  name: ["sarfraz", "john"],
+                  age: 25,
+                  getName: function () {
+                    console.log(this.age);  // it will return 25
+                  }
+                }
+                obj.getName();
+              </script>
+            </xmp>
+            <h3>Step 2</h3>
+            <xmp style="overflow:auto;">
+              <script>
+                let obj = {
+                  name: ["sarfraz", "john"],
+                  age: 25,
+                  getName: function () {
+                    this.name.map(function (item) {
+                      console.log(item + " : " + this.age);
+                      // Here this.age will return undefined because different functional
+                      //scope has started, here "this" lost itself in this lexical scope
+                    })
+                  }
+                }
+                obj.getName();
+              </script>
+            </xmp>
+            <h3>Step 3</h3>
+            <xmp style="overflow:auto;">
+              <script>
+                let obj = {
+                  name: ["sarfraz", "john"],
+                  age: 25,
+                  getName: function () {
+                    console.log(this.age);
+                    let that = this;
+
+                    // Now, that variable has this keyword and now we will
+                    //get the output if we write that.age but This is not a
+                    //good practice, instead of this we will use arrow function
+
+                    this.name.map(function (item) {
+                      console.log(item + " : " + that.age);
+                    })
+                    //arrow function
+                    this.name.map((item) => {
+                      console.log(item + " : " + this.age);
+                    })
+                  }
+                }
+                obj.getName();
+              </script>
+            </xmp>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFifteen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFifteen" aria-expanded="false" aria-controls="flush-collapseFifteen">
+            11.Define callback in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapseFifteen" class="accordion-collapse collapse" aria-labelledby="flush-headingFifteen"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              In JavaScript, functions are objects and therefore, functions can take other functions as arguments
+              and
+              can also be returned by other functions.
+
+            </p>
+            <p>
+              A callback function is a function that is passed as an argument to another function, to be "called
+              back"
+              at a later time. A function that accepts other function as arguments is called higher-order
+              function.
+              callbacks are not asynchronous by nature, but can be used for asynchronous purposes.
+            </p>
+            <p>
+              In JavaScript codes are executed synchronously which means 2nd code will be executed once first code
+              is
+              executed but if you want to execute the codes together like asynchronously then we will use
+              callbacks
+              and
+              promise.
+            </p>
+            <div class="edit_image">
+              <img src="images/call_back.png" class="img-fluid" alt="">
+            </div>
+            <p>
+              First of all we will make a function, name can be anything and passed parameter a, b, callback then
+              a
+              and
+              b have been added in console and third parameter has been called. <br>
+              We know that in callback function, another function is taken as an argument so prmtr(which is
+              function
+              has
+              been defined above) has been taken. <br>
+              Here, callback() will control the outer function prmtr(). <br>
+              Since callback() was called first and “I will be used an an argument” printed first and then
+              console.log(a+b). So, result will be “I will be used an an argument” 30.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwenty">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwenty" aria-expanded="false" aria-controls="flush-collapseTwenty">
+            12.Define Closure.
+
+          </button>
+        </h2>
+        <div id="flush-collapseTwenty" class="accordion-collapse collapse" aria-labelledby="flush-headingTwenty"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/closure.png" class="img-fluid" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            13.What are some of the built-in methods in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Built-in Method Values <br>
+            Date() Returns the present date and time <br>
+            concat() Joins two strings and returns the new string <br>
+            push() Adds an item to an array at the end. <br>
+            pop() Removes and also returns the last element of an array <br>
+            round() Rounds of the value to the nearest integer and then returns it <br>
+            length Returns the length of a string <br>
+            Which built-in method returns the character at the specified index? <br>
+            charAt() <br>
+            Which built-in method combines the text of two strings and returns a new string? <br>
+            concat() <br>
+            Which built-in method calls function for each element in the array? <br>
+            forEach() <br>
+            Which built-in method returns the index within the calling string object of the first occurance of the
+            specified value? <br>
+            indexOf(); <br>
+            Which built-in method reverses the order of the elements of an array? <br>
+            reverse() <br>
+            Which built-in method sorts the elements of an array? <br>
+            sort() <br>
+            Which built-in method returns the characters in a string begging at the specified location through the
+            specified number of charactors? <br>
+            substr() <br>
+            Which built-in method returns the string representation of the number's value? <br>
+            toString() <br>
+            How to read elements of an array in JavaScript? <br>
+            x.length(Here x is an array which has some values like 1, 2 etc.)
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading555">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse555" aria-expanded="false" aria-controls="flush-collapse555">
+            14.Naming convention in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapse555" class="accordion-collapse collapse" aria-labelledby="flush-heading555"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/naming_convention.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading577">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse577" aria-expanded="false" aria-controls="flush-collapse577">
+            15.Define operator and typeOf() operator, How type of operator works?
+        </h2>
+        <div id="flush-collapse577" class="accordion-collapse collapse" aria-labelledby="flush-heading577"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>operator is a symbol that performs an operation such as adding, multiplying, dividing etc between two or
+              more than two operants(var a and var b values, numbers etc). We have 8 operators. +, -, *,
+              exponentiaiton(**), division, modulus(remainder %), increment(++), decrement(--)
+            </p>
+            <p>
+              To know the type of a JavaScript variable, we can use the typeof operator.
+              The data type of JavaScript can be divided into two types. Primitive and non-primitive data type.
+            </p>
+            <p>
+              The typeof is a unary operator that is placed before its single operand, which can be of any type. its
+              value is a string indicating the data type of the operand. <br>
+            </p>
+            <xmp style="overflow:auto;">
+              <script>
+                let arry = [1, 2, 3];
+                console.log(typeof (arry)); // Object
+
+                let Obj = {
+                  name: "sarfraz"
+                }
+                console.log(typeof (Obj)); // Object
+
+                // Note: the typeof non primitive data tyes are object and this is why arry and object typeOf is object
+
+                let a;
+                console.log(typeof (a)); // undefined
+
+                let a = null;
+                console.log(typeof (a)); // Object
+
+                let a = false / true;
+                console.log(typeof (a)); // boolean
+
+                let a = 3.14;
+                console.log(typeof (a)); // number
+
+                let a = NaN;
+                console.log(typeof (a)); // number
+
+                let fun = function () {
+                  document.write("Hello");
+                };
+                fun();
+                console.log(typeof (fun)); // function
+              </script>
+            </xmp>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingNineteen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseNineteen" aria-expanded="false" aria-controls="flush-collapseNineteen">
+            16.How to read/print, delete, change cookies,local storage and session storage. OR
+            What are the differences between cookie, local storage and session storage. <br>
+            Define HTML5 api.
+          </button>
+        </h2>
+        <div id="flush-collapseNineteen" class="accordion-collapse collapse" aria-labelledby="flush-headingNineteen"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/cooky.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/cooky_delete.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <p>
+            HTML5 introduced a lot of api like
+          <Ul>
+            <li>HTML Local Storage</li>
+            <li>HTML Application Cache</li>
+            <li>HTML Geolocation</li>
+            <li>HTML Drag and Drop</li>
+            <li>HTML Web Workers</li>
+            <li>HTML SSE(Server-Sent Events)</li>
+          </Ul>
+          <p>
+            It is an API to store the web-side data. We have an API of HTML5 that we use to store the data of the web.
+            <br>
+            It has two types LOCAL STORATE and SESSION STORAGE. <br>
+            Note:- It will work on live server only and use chrome for this. <br>
+            LOCAL STORAGE VS COOKES <br>
+            LOCAL STORATE:- HTML5 local storage API is used to store the data locally in user’s browsers or user’s
+            computer/laptop. It is an alternate and better way than cookies. It is not related to the server. <br>
+            When we make any website using JavaScript or JavaScript framework or library, the execution of the code
+            takes place in user’s browser or on client side(browser) and if we store the data locally means in the
+            user’s browsers or pc, the codes will execute quickly so the web page will load quickly. <br>
+            But when we use any server side script we should use cookies. <br>
+            Local storage data never save the data in the server with HTTP request means whenever we send data from
+            local storage to server using HTTP request then that data will not save in the server. So, the response will
+            be faster but cookies data will save in the server when we send data via HTTP request so it can be a bit
+            slow in the response from the server. <br>
+            We can save 5GB data in the local storage and
+            Local storage data never expires but we can clear data using JavaScript methods but cookies data will expire
+            with the time you set and if you don’t set any time it will expire with session. <br>
+            Limitation of local storage:- <br>
+            We can store data as string only, not boolean, number, etc. up to 5MB <br>
+
+            Point to Remember <br>
+            1.Local storage is a property of window object. <br>
+            2.It stores data in the machine or web browser. <br>
+            3.It does not have expiry date <br>
+            4.It does not get saved to the server but in cookies it gets sent. <br>
+            Methods:- (Both local & Session storage have the same methods) <br>
+            setItem(key, value) - To store or add the key value pair. It will overirde the old value if already
+            added/saved. <br>
+            getItem(key) - To get the value aleady set or stored. <br>
+            key(n) - It return the index of the value. <br>
+            removeItem(key)- To remove the value stored <br>
+            Here is the screen-shot and steps to use the above methods. <br>
+
+          <div class="edit_image">
+            <img src="images/local_storage.png" class="img-fluid" alt="">
+          </div>
+
+          </p>
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingNineteen1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseNineteen1" aria-expanded="false" aria-controls="flush-collapseNineteen1">
+            17.How to redirect a url using JavasScript Or how to go to home page from login page Or how to print web
+            page using javascript?
+          </button>
+        </h2>
+        <div id="flush-collapseNineteen1" class="accordion-collapse collapse" aria-labelledby="flush-headingNineteen1"
+          data-bs-parent="#accordionFlushExample">
+          <p>We can do a page redirect using JavaScript at client side by adding one line of code under head section</p>
+          <div id="scroll_content">
+            <xmp>
+              <div id="mylocation"></div>
+
+              <head>
+                <script>
+                  window.location = "https://www.google.com";
+                </script>
+                <script>
+                  window.location.href = "home.html"; //to go to the home page on login page button click
+                </script>
+              </head>
+            </xmp>
+            <p>
+              We can use window.print();
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading74">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse74" aria-expanded="false" aria-controls="flush-collapse74">
+            18. How to handle exceptions in JavaScript? OR
+            What is the purpose of onError event handler in JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapse74" class="accordion-collapse collapse" aria-labelledby="flush-heading74"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              With the help of try/catch/finally, we can handle exceptions in JavaScript. To implement it, we need
+              to put all the codes under try and if it finds any error, catch will run and show the error. We mostly
+              use it when we have to receive the data from server in json form.
+            <div class="edit_image">
+              <img src="images/try_catch_use.png" class="img-fluid" alt="">
+            </div>
+            Here, we can't catch syntax error.
+            It does not work synchronously. It will not work properly if we use setTimout. In order to make setTimeOut
+            function work properly we need to put try and catch in a function <br>
+            like settimeout(function(){try{blabla}catch(error){console.lot("error")}}, 1000)
+            </p>
+
+            <div class="edit_image">
+              <img src="images/try_catch.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/onError event handler.png" class="img-fluid" alt="">
+            </div>
+            <div class="link">
+              <a href="https://www.youtube.com/watch?v=fRv2ng_srrM">For more details</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThirteen">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+            19.Difference among var, let and const.
+
+          </button>
+        </h2>
+        <div id="flush-collapseThirteen" class="accordion-collapse collapse" aria-labelledby="flush-headingThirteen"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/difference_let_var_const.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading41">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse41" aria-expanded="false" aria-controls="flush-collapse41">
+            20.Define strict mode and also write the characteristics of JavaScript strict-mode
+          </button>
+        </h2>
+        <div id="flush-collapse41" class="accordion-collapse collapse" aria-labelledby="flush-heading41"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+
+            <div class="edit_image">
+              <img src="images/srtrict mode.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading425">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse425" aria-expanded="false" aria-controls="flush-collapse425">
+            21.Define shadowing variable?
+          </button>
+        </h2>
+        <div id="flush-collapse425" class="accordion-collapse collapse" aria-labelledby="flush-heading425"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            The shadowing is the process where we can declare variables with the same name in different
+            scopes. <br>
+            We can't specify or declare const and let variabls twice in the same scope.
+          </div>
+          <div id="scroll_content">
+            <xmp>
+              <div id="mylocation"></div>
+              <script>
+                function outerScope() {
+                  const x = 20;
+                  document.write('outer scope value is ', ' : ', x, '<br>');
+                  function innerScope() {
+                    const x = 10;
+                    document.write('inner scope value is ', ' : ', x);
+                  }
+                  innerScope();  // 10
+                }
+                outerScope();  // 20
+              </script>
+            </xmp>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThirtyone">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThirtyone" aria-expanded="false" aria-controls="flush-collapseThirtyone">
+            22.What is the difference between Call, bind and Apply? (explain in detail with examples)
+            Or What is the difference between Undefined and Null in JavaScript?
+
+          </button>
+        </h2>
+        <div id="flush-collapseThirtyone" class="accordion-collapse collapse" aria-labelledby="flush-headingThirtyone"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/call_apply_bind.png" class="img-fluid" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThirtythree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThirtythree" aria-expanded="false" aria-controls="flush-collapseThirtythree">
+            23.Difference between “ == “ and “ === “ operators (with examples)
+          </button>
+        </h2>
+        <div id="flush-collapseThirtythree" class="accordion-collapse collapse"
+          aria-labelledby="flush-headingThirtythree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <p>
+              1.“==” operator is a comparison operator that used to compare the values <br>
+              2.“===” operator is also a comparison operator that is used to compare the values as well as
+              types. <br>
+              Example: <br>
+              var x = 3; <br>
+              var y = "3"; <br>
+              (x == y)  // it returns true as the value of both x and y is the same <br>
+              (x === y) // it returns false as the typeof x is "number" and typeof y is "string"
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThirtythree1">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThirtythree1" aria-expanded="false"
+            aria-controls="flush-collapseThirtythree1">
+            24.Implicit corcian
+          </button>
+        </h2>
+        <div id="flush-collapseThirtythree1" class="accordion-collapse collapse"
+          aria-labelledby="flush-headingThirtythree1" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/corcian.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading55">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse55" aria-expanded="false" aria-controls="flush-collapse55">
+            25.What’s the difference between JavaScript and Java?
+          </button>
+        </h2>
+        <div id="flush-collapse55" class="accordion-collapse collapse" aria-labelledby="flush-heading55"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            JavaScript is an object-oriented scripting language whereas Java is an object-oriented programming
+            language. <br>
+            JavaScript applications are run inside a web browser whereas Java applications are usually used in
+            operating systems and virtual machines. <br>
+            JavaScript needs compiler before running the application code but
+            Java does not need compiler before running the application code.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading43">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse43" aria-expanded="false" aria-controls="flush-collapse43">
+            26.What are object prototypes or prototype or prototype chain and why do we use it? <br>
+            Define instance member and prototype member.
+          </button>
+        </h2>
+        <div id="flush-collapse43" class="accordion-collapse collapse" aria-labelledby="flush-heading43"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/prototype.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThirtytwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThirtytwo" aria-expanded="false" aria-controls="flush-collapseThirtytwo">
+            27.Define Hoisting in JavaScript.
+          </button>
+        </h2>
+        <div id="flush-collapseThirtytwo" class="accordion-collapse collapse" aria-labelledby="flush-headingThirtytwo"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/hoisting.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading57">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse57" aria-expanded="false" aria-controls="flush-collapse57">
+            28.Define function declaration and function expression (Difference)
+          </button>
+          </button>
+        </h2>
+        <div id="flush-collapse57" class="accordion-collapse collapse" aria-labelledby="flush-heading57"
+          data-bs-parent="#accordionFlushExample">
+          <div class="edit_image">
+            <img src="images/function_expression.png" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading999">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse999" aria-expanded="false" aria-controls="flush-collapse999">
+            29.statement and expression (Difference)
+          </button>
+        </h2>
+        <div id="flush-collapse999" class="accordion-collapse collapse" aria-labelledby="flush-heading999"
+          data-bs-parent="#accordionFlushExample">
+          <b style="text-align: center; display: block; padding: 0 20px;">
+            Statemnt: It is a group of operands and operator to perform a particular task. <br>
+            let sum = a + b; <br>
+            Here, a and b are two operands and + and = are operators,
+            sum is a variable in which the result is assigned. <br>
+            Experession:- It is a combination of one or more expression. It can be a variable or value or combination of
+            variables or values with operators. <br>
+            sum = a + 10; <br>
+            In this statement, we have four expressions variable a, value 10, a+10 and sum= a + 10;
+          </b>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            30.History of JavaScript and its features introduced in ES6 or ECMAScript.
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+          data-bs-parent="#accordionFlushExample">
+          <P>The full form of ECMA is European Computer Manufacturer's Association. It is the official name of
+            javaScript
+            <br>
+            The name is used for language specification(version). For example, JavaScript has many specification or
+            version like ECMAScript 5(2009), ECMAScript 6(2015), ECMAScript 7, ECMAScript 8, ECMAScript 9(2018)
+          </P>
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/es5_es9.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            31.Difference between Async/Await and Generators? Or Define Async/await, fetch and how to insert, delete,
+            read
+            data from server using fetch?
+
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            Async/Await
+            <p>
+              Async-await functions are executed sequentially one after another in an easier way.
+            </p>
+            <p>
+              Async/Await function might throw an error when the value is returned.
+            </p>
+            Generators
+            <p>
+              Generator functions are executed with one output at a time by the generator’s yield by yield.
+              The ‘value: X, done: Boolean’ is the output result of the Generator function.
+            </p>
+            <div class="edit_image">
+              <audio controls>
+                <source src="images/async&await.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="edit_image">
+              <audio controls>
+                <source src="images/generator.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <p>Async-await</p>
+            <p>
+              Async allows us to write promise based codes and a word “Async” before a function means one simple thing
+              that function will always returns a promise and it is an Async function and work in asynchronous mode in
+              the
+              background.
+              The keyword “await” before a function makes function await for a promise. It can be used only with Async
+              function.
+              Async is the latest version of Promise which means we can do all the things that we were doing in Promise
+              and the best part of Async is that we can use one more feature with Async called await. Await is used
+              inside
+              the Async function. Async was introduced in ES8 in 2017 in which we don’t require to declare resolve and
+              reject every time . Now, we can simply make a function and add Async just before the function declaration
+              and it will return a promise. So, here we will use then and catch methods without defining resolve and
+              reject which will reduce the code length and also complexity that we had when using in promises.
+            <div class="edit_image">
+              <img src="images/async_await1.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/async_await2.png" class="img-fluid" alt="">
+            </div>
+
+            </p>
+            <p>Fetch() </p>
+            <p>
+              Fetch() method was introduced in ECMAScript 2015(ES6). It is the advance version of AJAX which allows to
+              crude with server such as reading and fetching the data from server, updating, inserting and deleting the
+              data from server. We can do the same with AJAX in jQuery and JavaScript . When we use AJAX in jQuery using
+              $.ajax(); , $.get(); , $.post(); methods . It is easy to use due to less coding but we need to add to 50
+              to
+              100 KB file to use it as all the codes are inside this file and without it jQuery will not work, which
+              loads
+              every time when we run the jQuery codes which makes the application slow and when we use AJAX in
+              JavaScript
+              using XMLHTTPReuest method, we have to write too many codes. So, to overcome these issues fetch() method
+              was
+              introduced.
+            </p>
+            <p>
+              Fetch() Syntax:- <br>
+              1.Fetch(); <br>
+              2.Fetch(file path or URL); file or URL can be text, ajax, php. Fetch returns promise so we will use then()
+              call back function considering the promise is fulfilled. <br>
+              3.Fetch(file/URL).then(); When we use then() call back function, we usually need to take a function to do
+              the next work but here we will not do so as then() returns promise so we will take then() <br>
+              4.Fetch(file/URL).then().then() <br>
+              Feth(file/URL).then(function(response){return r
+              esponse.data;}).then(function(result){console.log(result);})
+            </p>
+            <div class="edit_image">
+              <img src="images/fetch1.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/fetch2.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/fetch_crude1.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/fetch_crude2.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/fetch_crude3.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree33">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree33" aria-expanded="false" aria-controls="flush-collapseThree33">
+              32.What is a Temporal Dead Zone?
+            </button>
+          </h2>
+          <div id="flush-collapseThree33" class="accordion-collapse collapse" aria-labelledby="flush-headingThree33"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              Temporal Dead Zone is a behavior that occurs with variables declared using let and const keywords before
+              they are initialized. <br>
+              In another word, Temporal dead zone is the area where a varialbe is not accessible.
+
+              <xmp style="overflow:auto;">
+                <script>
+                  console.log(a);
+                  let aj = 10;
+                </script>
+              </xmp>
+
+              It will throw an error like Uncaught "ReferenceError: can't access lexical declaration 'aj' before
+              initialization" which means we need to declare value of aj and then we need assign or initialize it and
+              then only
+              we can call the "aj". This happens because that In ES6, two new varialbes(let & const) were introduced
+              which are block scope/variables where our hoising does not work like var keyword and this is why these two
+              varialbes fall into temporal dead zone.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+
+              33. Define OOPs and Inheritance.
+
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>
+                It is a coding methodology/style/pattern
+                that can convert the biggest code into a small code. It helps to make the code modular(Compatible) and
+                reusable.
+              </p>
+              <p>
+                Since it well organize the code so it can be easily maintained and debugged.
+                It is good to use this oop for your big website projects.
+                Now a days, it is mostly used in javaScript frameworks like react js, vue js, node js, angular js etc.
+                This oop is used in almost all high lavel progaramming languages. The syntax may be different but the
+                concept is same for all the progaramming languages.
+              </p>
+              <p>
+              <h4>CLASS & OBJECT</h4>
+              Suppose, I have a blue print of a flat and a builder wants to make flats using the same blue prints.
+              Since the blue print is the same for all the flats, so all the flates made by the builder will be the
+              same/common.
+              Here, Blueprint will the class and the houses made by the builder using the same blue prints will the
+              object.
+              Object will contain only those things that a class keeps, nothing will be extra in the object that class
+              does not contain. <br>
+              Object refers how the class is. <br>
+              <bold>In OOP Concept, we group function and variable in a block called class.</bold>
+              </p>
+              <p>
+                Toita which is a car. Here, Toita is object and car is a class. <br>
+                Car features like color, Engine, seats, AC, price are called properties in programming language and
+                these properties linked to the class, car. Every class has its own properties. <br>
+                The values of the properties may be different for different objects like toita and safari. <br>
+                Like Toita color can be 4 but for Safari, it can be 5. <br>
+                Toita engine can be 1200cc but for Safari, it can be 2700cc.
+              </p>
+              <p>
+                Class contains properties and methods. <br>
+                properties are like variables like let a; let b; let c; declared inside the class.
+                methods refer what your class can do and its working is defined in the methods or method is a function
+                used to do
+                the action like adding, substracting the variables. In methods, we can use only those properties I have
+                declared.
+              </p>
+              <p>
+                How to declare class in javaScript
+              </p>
+              class myClass{ } <br>
+              <h3>There are three types of methods in oops</h3>
+              <div class="edit_image">
+                <img src="images/opps_method.png" class="img-fluid" alt="">
+              </div>
+
+              <h3>OOPs PRINCIPAL</h3>
+              <div class="edit_image">
+                <img src="images/opps_principal.png" class="img-fluid" alt="">
+              </div>
+              <p>Use of constructor, super and prototype methods with pics</p>
+              <div class="edit_image">
+                <img src="images/opps_method2.png" class="img-fluid" alt="">
+              </div>
+              <p>
+                Note:- When we use two constructor methods in one class then we need to use super method in the child
+                Constructor function as shown in the above image.
+              </p>
+
+              <h3>INHERITANCE IN DETAILS</h3>
+              <P>
+                Inheritance is a process where one class acquires properties and methods from another class. <br>
+                The one receives the methods and properties is called child/sub/deried and the one one from it is
+                received is called perent/super/base. <br>
+                Note:- When we use two constructor methods in one class then we need to use super method in the child
+                Constructor function.
+              </P>
+              <div class="edit_image">
+                <img src="images/inheritance.png" class="img-fluid" alt="">
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+              34.What's the difference between event.preventDefault() and event.stopPropagation() methods in JavaScript?
+
+            </button>
+          </h2>
+          <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">In JavaScript, the event.preventDefault() method is used to prevent the default
+              behavior of an element.
+              For example: If you use it in a form element, it prevents it from submitting. If used in an anchor
+              element, it prevents it from navigating. If used in a contextmenu, it prevents it from showing or
+              displaying. <br>
+              On the other hand, the event.stopPropagation() method is used to stop the propagation of an event or stop
+              the event from occurring in the bubbling or capturing phase.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingEight">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+              35.What are the various data types that exist in JavaScript?
+
+            </button>
+          </h2>
+          <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/data_type.png" class="img-fluid" alt="">
+              </div>
+
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSixteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseSixteen" aria-expanded="false" aria-controls="flush-collapseSixteen">
+                36.Define debug a JavaScript code?
+              </button>
+            </h2>
+            <div id="flush-collapseSixteen" class="accordion-collapse collapse" aria-labelledby="flush-headingSixteen"
+              data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                It is beeter to use debuger keyword when we have big files and so many errors because if we have
+                big files, it becomes difficult to understand where the error is such as line number, error etc.
+                <div class="edit_image">
+                  <img src="images/debug.png" class="img-fluid" alt="">
+                </div>
+                <div class="link">
+                  <a href="https://www.youtube.com/watch?v=KP_0vpKVdok">How to catch error with console.log()</a>
+                </div>
+                <div class="link">
+                  <a href="https://www.youtube.com/watch?v=ek2hhFZNul8&t=78s">For debuger use</a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwentyOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwentyOne" aria-expanded="false" aria-controls="flush-collapseTwentyOne">
+                37.Define arrow function.
+              </button>
+            </h2>
+            <div id="flush-collapseTwentyOne" class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwentyOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <div class="edit_image">
+                  <img src="images/arrow.png" class="img-fluid" alt="">
+                </div>
+              </div>
+              We use arrow function becuase it makes the length of the code shorter, we really don't require
+              to use return keyword if we have signle statement or working with loop, we can also remove the
+              parathesis in arrow function when when we have single parameter like (a) = a and third reason to use
+              it, the concept of this keyword.
+              <div class="edit_image">
+                <img src="images/arrow_function.png" class="img-fluid" alt="">
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentytwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentytwo" aria-expanded="false"
+                  aria-controls="flush-collapseTwentytwo">
+                  38.What are the different ways an HTML element can be accessed in a JavaScript code?
+                  Or
+                  Define DOM AND EVENTS.
+                </button>
+              </h2>
+              <div id="flush-collapseTwentytwo" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentytwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/DOM.png" class="img-fluid" alt="">
+                  </div>
+                  <p>Follow the path for form events</p>
+                  <p>C:\Users\pione\OneDrive\Desktop\FED\JAVASCRIPT\13. Javascript Form Event</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentyfour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentyfour" aria-expanded="false"
+                  aria-controls="flush-collapseTwentyfour">
+                  39.What is DOM? What is the use of document object?
+                </button>
+              </h2>
+              <div id="flush-collapseTwentyfour" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentyfour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"> Flex box is one-dimensional system (either in a column or a row). It is
+                  used to
+                  make one dimensional responsive layout without using position and float.
+                </div>
+                <div class="edit_image">
+                  <img src="images/flex1.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThirtyfour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThirtyfour" aria-expanded="false"
+                  aria-controls="flush-collapseThirtyfour">
+                  40.Difference between client-side and server-side or client-side scripting and server-side
+                  scripting.
+                </button>
+              </h2>
+              <div id="flush-collapseThirtyfour" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingThirtyfour" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/clientVsserver.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingtf">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapsetf" aria-expanded="false" aria-controls="flush-collapsetf">
+                  41.Rest parameter and spread operator OR Write a programme to add/multiply/divide the numbers.
+                </button>
+              </h2>
+              <div id="flush-collapsetf" class="accordion-collapse collapse" aria-labelledby="flush-headingtf"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/rest_spread.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+                <h2>Defferences</h2>
+                The spread operator (...) unpacks the elements of an iterable object. <br>
+                The rest parameter (...) packs the elements into an array. It actually collects all remaining arguments
+                of a function into an array. <br>
+
+                The rest parameters must be the last arguments of a function. However, the spread operator can be
+                anywhere <br>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTS">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTS" aria-expanded="false" aria-controls="flush-collapseTS">
+                  42. Promises & Promise.all in JavaScript.
+                </button>
+              </h2>
+              <div id="flush-collapseTS" class="accordion-collapse collapse" aria-labelledby="flush-headingTS"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>
+                    Promises are used to handle asynchronous operations in JavaScript.
+
+                    Before promises, callbacks were used to handle asynchronous operations. But due to the limited
+                    functionality
+                    of callbacks, using multiple callbacks to handle asynchronous code can lead to unmanageable code
+                    or
+                    call
+                    back hell. So, Promise was introduced in ES6 ( ECMAScript 2015).
+
+                    Promise object has four states -
+                  <ul>
+                    <li>
+                      Pending - Initial state of promise. This state represents that the promise has neither been
+                      fulfilled
+                      nor
+                      been rejected, it is in the pending state.
+                    </li>
+                    <li>Fulfilled - This state represents that the promise has been fulfilled, meaning the async
+                      operation
+                      is
+                      completed.</li>
+                    <li>Rejected - This state represents that the promise has been rejected for some reason, meaning
+                      the
+                      async
+                      operation has failed.</li>
+                    <li>Settled - This state represents that the promise has been either rejected or fulfilled.</li>
+                    <li>A promise is created using the Promise constructor which takes in a callback function with
+                      two
+                      parameters, resolve and reject respectively.</li>
+                    <li>resolve is a function that will be called when the async operation has been successfully
+                      completed.
+                    </li>
+                    <li>
+                      reject is a function that will be called, when the async operation fails or if some error
+                      occurs.
+                    </li>
+                  </ul>
+                  <div class="edit_image">
+                    <img src="images/promise1.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="edit_image">
+                    <img src="images/promise2.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="edit_image">
+                    <img src="images/promise3.png" class="img-fluid" alt="">
+                  </div>
+                  </p>
+                  PROMISE.ALL
+                  <p>
+                    If all the promise is true then then call back function will execute and if any of the promises
+                    is
+                    false
+                    then catch call back will execute.
+                  </p>
+                  <P>
+                    Syntax
+                  </P>
+                  <p>
+                    Promise.all([p1, p2, p3]).then((result) => { console.log(result) }).catch((error) => {
+                    console.log(error)
+                    }); <br>
+                    Here, p1, p2, p3 are three promises.
+                  </p>
+                  <div class="edit_image">
+                    <img src="images/promise_all.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTSEVEN">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTSEVEN" aria-expanded="false" aria-controls="flush-collapseTSEVEN">
+                  43.Define map, reducer.
+                </button>
+              </h2>
+              <div id="flush-collapseTSEVEN" class="accordion-collapse collapse" aria-labelledby="flush-headingTSEVEN"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>
+                    Map method is used to create a new array by adding, multiplying the values of an array. <br>
+                    It also used to make new array from the multidimentional objects by taking out the values.
+                    usuallY don't print it. <br>
+                    It has three parameters (value, i,array).<br>
+                    value is for value like
+                    in var a 1,2,3....,10 are values, <br> i is index and array means complete array.
+                  </p>
+                  <div class="edit_image">
+                    <img src="images/map_reducer.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTeight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTeight" aria-expanded="false" aria-controls="flush-collapseTeight">
+
+                  44.Pure and Impure functions.
+                </button>
+              </h2>
+              <div id="flush-collapseTeight" class="accordion-collapse collapse" aria-labelledby="flush-headingTeight"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/pureVsimpure.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTnine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTnine" aria-expanded="false" aria-controls="flush-collapseTnine">
+
+                  45.AJAX,
+                </button>
+              </h2>
+              <div id="flush-collapseTnine" class="accordion-collapse collapse" aria-labelledby="flush-headingTnine"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/ajax.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingFourty">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFourty" aria-expanded="false" aria-controls="flush-collapseFourty">
+
+                  46.Immediately Invoked Function in JavaScript (IIF)
+                </button>
+              </h2>
+              <div id="flush-collapseFourty" class="accordion-collapse collapse" aria-labelledby="flush-headingFourty"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/ief.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading477">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse477" aria-expanded="false" aria-controls="flush-collapse477">
+                  47. Guess the output.
+                </button>
+              </h2>
+              <div id="flush-collapse477" class="accordion-collapse collapse" aria-labelledby="flush-heading477"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/guess.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading42">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse42" aria-expanded="false" aria-controls="flush-collapse42">
+                  48.Set, weakSet, map and weakMap
+                </button>
+              </h2>
+              <div id="flush-collapse42" class="accordion-collapse collapse" aria-labelledby="flush-heading42"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/weakset_weakmap.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading491">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse491" aria-expanded="false" aria-controls="flush-collapse491">
+                  49.Mobile first Approach?
+                </button>
+              </h2>
+              <div id="flush-collapse491" class="accordion-collapse collapse" aria-labelledby="flush-heading491"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  A “mobile-first” approach involves designing a desktop site starting with the mobile version, which is
+                  then adapted to larger screens. <br>
+                  In another word, a mobile-first approach means building
+                  your website with your mobile users in mind, just to improve the mobile users’
+                  experience on your site. <br>
+                  We shold follow Mobile first approach because 80% of the users will see your website on their mobile
+                  phones.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading522">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse522" aria-expanded="false" aria-controls="flush-collapse522">
+                  50.What is NaN property in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse522" class="accordion-collapse collapse" aria-labelledby="flush-heading522"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/NAN.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading75">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse75" aria-expanded="false" aria-controls="flush-collapse75">
+                  51.How to validate a form in JavaScript?
+                  Or How to submit a form on button click?
+                </button>
+              </h2>
+              <div id="flush-collapse75" class="accordion-collapse collapse" aria-labelledby="flush-heading75"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/form_validation.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="edit_image">
+                    <img src="images/form_submit_onClick.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+                <div class="link">
+                  <a href="https://www.youtube.com/watch?v=fQ9QkBGohLw">See video how to validate form</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading76">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse76" aria-expanded="false" aria-controls="flush-collapse76">
+                  52.How to validate email in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse76" class="accordion-collapse collapse" aria-labelledby="flush-heading76"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  We can use regular_expression for email and other validations like mobile etc. because it reduces the
+                  legth of the code. We can visit a website called https://regex101.com/ <br>
+                  <a href="https://regex101.com/">Please visit the regex101</a> <br>
+                  We need to take two forward slashes to implement regular_expression and inside it to validate
+                  letter from A to Z in capital letter and a to z in small letter we will take square bracket and
+                  write /[A-Z a-z]/ <br>
+                  It will check capital and small letter values from A to Z.
+                  Now we have to validate @ such as pioneer25me@gmail.com
+                  So, we will write /[A-Z a-z]@/ but now I want there should be atleast one letter before @ and maximum
+                  can be anything so we will write /[A-Z a-z]{1, }@/
+                  Note:- To valide any letter and special character we use square bracket like [] and any range like at
+                  least three letter we will us curly brackes {} and we also need to use cap symbol at begging and
+                  $ symbol at the end like / ^[A-Z a-z]{1, }@ $ /
+
+                  <div class="edit_image">
+                    <img src="images/email_validation.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="link">
+                    <a href="https://www.youtube.com/watch?v=-6bJ-l8PXAQ">See video how to validate Email</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentyfive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentyfive" aria-expanded="false"
+                  aria-controls="flush-collapseTwentyfive">
+                  53. What is the use of window object?
+                </button>
+              </h2>
+              <div id="flush-collapseTwentyfive" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentyfive" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/window_object.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentyseven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentyseven" aria-expanded="false"
+                  aria-controls="flush-collapseTwentyseven">
+                  54.What are Import and Export in JavaScript? <br>
+                  Define module.
+                </button>
+              </h2>
+              <div id="flush-collapseTwentyseven" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentyseven" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>
+                    Module is a feature introduced in ES6 that allows use to split the code of a main file of your
+                    project into different files. It is used when we have different things in our file such as
+                    variable, function, class etc. and I want to use just variable from that file then we will Export
+                    variable and import in a different file where I want to use it. It will well organize and maintaine
+                    the code and also reduce the loading time.
+                  </p>
+                  <p>
+                    Module has two features or statement called Export and Import.
+                  </p>
+                  <p>
+                    Export is used before any variable/fuction/class that we want to use in another file and to
+                    use the exported varialbe in different file we will use import keyword.
+                  </p>
+                  <div class="edit_image">
+                    <img src="images/module_js.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentyeight">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentyeight" aria-expanded="false"
+                  aria-controls="flush-collapseTwentyeight">
+                  55.What are some of the JavaScript frameworks and their uses?
+                </button>
+              </h2>
+              <div id="flush-collapseTwentyeight" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentyeight" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">The CSS3 calc() function allows us to perform mathematical operations on
+                  property values. Instead of declaring, for example, static pixel values for an element's width, we
+                  can
+                  use
+                  calc() to specify that the width is the result of the addition of two or more numeric values.
+                  <p>Refer audio for more clarification</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentynine">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentynine" aria-expanded="false"
+                  aria-controls="flush-collapseTwentynine">
+                  56.What is the difference between Undefined and Undeclared in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapseTwentynine" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentynine" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">The float property of CSS positions an image to the right or left as
+                  needed,
+                  including text wrapping around it. All properties of elements used before it remain unchanged. 
+                </div>
+                <div class="link">
+                  <a href="file:///C:/Users/pione/OneDrive/Desktop/FED/CSS3/float_clear.html">For more details</a>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThirty">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThirty" aria-expanded="false" aria-controls="flush-collapseThirty">
+                  57. Destructoring method.
+                </button>
+              </h2>
+              <div id="flush-collapseThirty" class="accordion-collapse collapse" aria-labelledby="flush-headingThirty"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/destructuring.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading421">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse1" aria-expanded="false" aria-controls="flush-collapse1">
+                  58.difference between exec (), match(), search(), replace() and test () methods (Regular
+                  Expression
+                  /pattern/g.
+                </button>
+              </h2>
+              <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/regular_expression.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading80">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse80" aria-expanded="false" aria-controls="flush-collapse80">
+                  59. Define currying.
+                </button>
+              </h2>
+              <div id="flush-collapse80" class="accordion-collapse collapse" aria-labelledby="flush-heading80"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/currying.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading45">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse45" aria-expanded="false" aria-controls="flush-collapse45">
+                  60.Types of errors in JavaScript.
+                </button>
+              </h2>
+              <div id="flush-collapse45" class="accordion-collapse collapse" aria-labelledby="flush-heading45"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>
+                    Reference Error:- We get this error when we call any variable or function not defined.
+                  </p>
+                  <p>
+                    Type Error:- We know that in JavaScript every variable has different types, we have predefined types
+                    such string, number,
+                    bullian, charactor, float, integer. We get type error when we use any type not predefined.
+                  </p>
+                  <div class="edit_image">
+                    <img src="images/errors.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="link">
+                    <a href="https://www.youtube.com/watch?v=y6f6S4ZH-sU">For more details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading48">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse48" aria-expanded="false" aria-controls="flush-collapse48">
+                  61.How to write HTML code and normal text code dynamically using JavaScript
+                </button>
+              </h2>
+              <div id="flush-collapse48" class="accordion-collapse collapse" aria-labelledby="flush-heading48"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>
+                    The innerHTML property is used to write the HTML code using JavaScript dynamically. Let's see a
+                    simple example: <br>
+                    The innerText property is used to write the simple text using JavaScript dynamically. Let's see
+                    a simple example: <br>
+                  </p>
+                  <div id="scroll_content">
+                    <xmp>
+
+                      <body>
+                        <div id="mylocation"></div>
+                        <script>
+                          document.getElementById('mylocation').innerHTML = "<h2>This is Sarfraz</h2>";
+                          document.getElementById('mylocation').innerText = "This is Sarfraz";
+                        </script>
+                      </body>
+                    </xmp>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading622">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse622" aria-expanded="false" aria-controls="flush-collapse622">
+                  62. What is the use of history object?
+                </button>
+              </h2>
+              <div id="flush-collapse622" class="accordion-collapse collapse" aria-labelledby="flush-heading622"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading50">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse50" aria-expanded="false" aria-controls="flush-collapse50">
+                  63.How to write a comment in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse50" class="accordion-collapse collapse" aria-labelledby="flush-heading50"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>
+                    There are two types of comments in JavaScript. <br>
+                    1.Single Line Comment: It is represented by // (double forward slash) <br>
+                    2.Multi-Line Comment: Slash represents it with asterisk symbol as /* write comment here
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading644">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse644" aria-expanded="false" aria-controls="flush-collapse644">
+                  64. What is the difference between Document and Window in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse644" class="accordion-collapse collapse" aria-labelledby="flush-heading644"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading655">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse655" aria-expanded="false" aria-controls="flush-collapse655">
+                  65.What are the ways of adding JavaScript code in an HTML file?
+
+                </button>
+              </h2>
+              <div id="flush-collapse655" class="accordion-collapse collapse" aria-labelledby="flush-heading655"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading666">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse666" aria-expanded="false" aria-controls="flush-collapse666">
+                  66.Is JavaScript a statically typed or a dynamically typed language?
+                  .
+                </button>
+              </h2>
+              <div id="flush-collapse666" class="accordion-collapse collapse" aria-labelledby="flush-heading666"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading67">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse67" aria-expanded="false" aria-controls="flush-collapse67">
+                  67.Passed by value and passed by reference
+                </button>
+              </h2>
+              <div id="flush-collapse67" class="accordion-collapse collapse" aria-labelledby="flush-heading67"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/passed_by.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading688">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse688" aria-expanded="false" aria-controls="flush-collapse688">
+                  68.Use of a constructor function (with examples)
+                </button>
+              </h2>
+              <div id="flush-collapse688" class="accordion-collapse collapse" aria-labelledby="flush-heading688"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading699">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse699" aria-expanded="false" aria-controls="flush-collapse699">
+
+                  69.What is memoization?
+
+                </button>
+              </h2>
+              <div id="flush-collapse699" class="accordion-collapse collapse" aria-labelledby="flush-heading699"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/memoization.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading70">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse70" aria-expanded="false" aria-controls="flush-collapse70">
+                  70.Recursion in a programming language Or How to flatten Array of Array?
+                </button>
+              </h2>
+              <div id="flush-collapse70" class="accordion-collapse collapse" aria-labelledby="flush-heading70"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/recursion.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading711">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse711" aria-expanded="false" aria-controls="flush-collapse711">
+
+                  71.Which method is used to retrieve a character from a certain index?
+
+                </button>
+              </h2>
+              <div id="flush-collapse711" class="accordion-collapse collapse" aria-labelledby="flush-heading711"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading722">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse722" aria-expanded="false" aria-controls="flush-collapse722">
+
+                  72.Who developed JavaScript, and what was the first name of JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse722" class="accordion-collapse collapse" aria-labelledby="flush-heading722"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading733">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse733" aria-expanded="false" aria-controls="flush-collapse733">
+
+                  73.What is the use of window object?
+                </button>
+              </h2>
+              <div id="flush-collapse733" class="accordion-collapse collapse" aria-labelledby="flush-heading733"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading744">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse744" aria-expanded="false" aria-controls="flush-collapse744">
+                  74.What are the pop-up boxes available in JavaScript?
+                  Or How to detect OS of the client using JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse744" class="accordion-collapse collapse" aria-labelledby="flush-heading744"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/popup_box.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading755">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse755" aria-expanded="false" aria-controls="flush-collapse755">
+                  75.What are the pop-up boxes available in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse755" class="accordion-collapse collapse" aria-labelledby="flush-heading755"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading766">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse766" aria-expanded="false" aria-controls="flush-collapse766">
+                  76.How to change the background color of HTML document using JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse766" class="accordion-collapse collapse" aria-labelledby="flush-heading766"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading788">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse788" aria-expanded="false" aria-controls="flush-collapse788">
+                  77.What is the difference between Event Capturing and Event Bubbling?
+                </button>
+              </h2>
+              <div id="flush-collapse788" class="accordion-collapse collapse" aria-labelledby="flush-heading788"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/event_capturing.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading7810">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse7810" aria-expanded="false" aria-controls="flush-collapse7810">
+                  78. How do you empty an array in JavaScript?
+                </button>
+              </h2>
+              <div id="flush-collapse7810" class="accordion-collapse collapse" aria-labelledby="flush-heading7810"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>1st way by assigning empty array</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arr1 = [1, 2, 3, 4];
+                      arry = []
+                      console.log(arr1); // 0
+                    </script>
+                  </xmp>
+                  <p>2nd way by assigning array.length to zero</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arr2 = [1, 2, 3, 4];
+                      arry = []
+                      console.log(arr2); // 0
+                    </script>
+                  </xmp>
+                  <p> 3rd way by usig popping method</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arry3 = [1, 2, 3, 4];
+                      while (arry.length > 0) {
+                        arry.pop();
+                      }
+                      console.log(arry3);
+                    </script>
+                    arry.pop() will remove 4 first and the remaining arry =[1,2,3] Since we have to remove even 1,2,3
+                    as so we have
+                    taken while loop, which means keep on popping until arr.length is greater than 0
+                  </xmp>
+                  <p> 3rd way by usig popping method</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arry4 = [1, 2, 3, 4, 5, 6];
+                      // arry.splice(0, arry.length, "Aman", 9)
+                      arry.splice(0, arry4.length)
+                      console.log(arry4);
+                    </script>
+
+                    Here splice has 1st parmeter 0 means start from 0 index, second one is how many delete
+                    (arry.length) means jitna
+                    bhi length hai, third parmeter is new element you want to add.
+
+                  </xmp>
+
+                  <div class="edit_image">
+                    <img src="images/empty_array.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading799">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse799" aria-expanded="false" aria-controls="flush-collapse799">
+                  79. What is this [[[]]]?
+                </button>
+              </h2>
+              <div id="flush-collapse799" class="accordion-collapse collapse" aria-labelledby="flush-heading799"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  Refer notes
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading90">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse90" aria-expanded="false" aria-controls="flush-collapse90">
+                  80. Define BOM.
+                </button>
+              </h2>
+              <div id="flush-collapse90" class="accordion-collapse collapse" aria-labelledby="flush-heading90"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/bom.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading811">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse811" aria-expanded="false" aria-controls="flush-collapse811">
+                  81. How to change HTML content using JavaScript?.
+                </button>
+              </h2>
+              <div id="flush-collapse811" class="accordion-collapse collapse" aria-labelledby="flush-heading811"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <xmp style="overflow:auto;">
+                    <h1>Hello</h1>
+                    <script>
+                      document.querySelector("h1").innerHTML = "Hello, Sarfraz";
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Here is the output :
+                  <h1>Hello</h1>
+                  <script>
+                    document.querySelector("h1").innerHTML = "Hello, Sarfraz";
+                  </script>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading822">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse822" aria-expanded="false" aria-controls="flush-collapse822">
+                  82. How to change HTML style(css)?.
+                </button>
+              </h2>
+              <div id="flush-collapse822" class="accordion-collapse collapse" aria-labelledby="flush-heading822"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <xmp style="overflow:auto;">
+                    <h1 style="color:blue">Hello</h1>
+                    <script>
+                      document.querySelector("h1").style.color = "red";
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Here is the output : Hello will be red in color
+
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading833">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse833" aria-expanded="false" aria-controls="flush-collapse833">
+                  83.How to hide and show HTML element?
+                </button>
+              </h2>
+              <div id="flush-collapse833" class="accordion-collapse collapse" aria-labelledby="flush-heading833"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <xmp style="overflow:auto;">
+                    </button onclick="show()">Display The Content </button>
+                    </button onclick="hide()">Hide The Content </button>
+                    <h1 style="display:none ;">Hello</h1>
+                    <script>
+                      function hide() {
+                        document.querySelector("h1").style.display = "none";
+                      }
+                      function show() {
+                        document.querySelector("h1").style.display = "block";
+                      }
+                    </script>
+                  </xmp>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading844">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse844" aria-expanded="false" aria-controls="flush-collapse844">
+                    84. How to create string?
+                  </button>
+                </h2>
+                <div id="flush-collapse844" class="accordion-collapse collapse" aria-labelledby="flush-heading844"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <div></div>
+                      <script>
+                        let y = "kjfadkjk"
+                        let x = document.getElementsByTagName("div").innerHTML = y;
+                        document.write(`${x} <br>`);
+                      </script>
+                    </xmp>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading855">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse855" aria-expanded="false" aria-controls="flush-collapse855">
+                    85.Whether number is prime or not. Or find prime number in the given array.
+                  </button>
+                </h2>
+                <div id="flush-collapse855" class="accordion-collapse collapse" aria-labelledby="flush-heading855"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+                        let num = 10;  // jo sir apne se aur 1 se katta hai prime number hat 1, 2, 3,5, 7 , 11, 13,17 etc.
+                        var isPrimeNumber = true;
+                        for (let i = 2; i < num; i++) {
+                          if (num % i == 0) {
+                            isPrimeNumber = false;
+                          }
+                        }
+                        if (isPrimeNumber == true) {
+                          document.write(`${num} is a Prime Number`);
+                        } else {
+                          document.write(`${num} is not a Prime Number or Composite Number`)
+
+                        }
+                      </script>
+                      <script>
+                        let Prime = [1, 3, 10, 5, 12];
+                        for (var i = 0; i < Prime.length; i++) {
+                          if (Prime[i] % 2 == 0) {
+                            console.log(Prime[i], "is is not prime number")
+                          } else {
+                            console.log(Prime[i], "is prime number")
+                          }
+                        }
+                      </script>
+                    </xmp>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading866">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse866" aria-expanded="false" aria-controls="flush-collapse866">
+                    86.Whether number is odd or even.
+                  </button>
+                </h2>
+                <div id="flush-collapse866" class="accordion-collapse collapse" aria-labelledby="flush-heading866"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+                        let num = 103;  // jo 2 se divide ho jaye wo even number hai 2, 4, 6, 8, 10,  etc. baki odd hai
+
+                        if (num % 2 == 0) {
+                          document.write(`${num} is even number`);
+                        } else {
+                          document.write(`${num} is odd number`);
+                        }
+                      </script>
+                      <script>
+                        let num = prompt("Enter Your Number");
+
+                        if (num % 2 == 0) {
+                          document.querySelector('div').innerHTML = `${num} is even number`
+                        } else {
+                          document.querySelector('div').innerHTML = `${num} is odd number`
+                        }
+                      </script>
+                    </xmp>
+                  </div>
+                </div>
+
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading877">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse877" aria-expanded="false" aria-controls="flush-collapse877">
+                    87. Sum of the digits.
+                  </button>
+                </h2>
+                <div id="flush-collapse877" class="accordion-collapse collapse" aria-labelledby="flush-heading877"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+                        let num = 346;  // jo 2 se divide ho jaye wo even number hai 2, 4, 6, 8, 10,  etc. baki odd hai
+                        let x = num % 10;
+                        document.write(x + "<br>");  // 6
+                        document.write(parseInt(num / 10) + "<br>");  //34
+                        let y = 34 % 10;
+                        document.write(y + "<br>");  // 4
+                        let z = parseInt(34 / 10);
+                        document.write(z + "<br>");  // 3
+                        document.write(x + y + z);
+                      </script>
+                       <h1>Some Of The Digits</h1>
+                      <script>
+                        let number = 346;
+                        var str = number.toString();
+                        let sum = 0;
+                        for (var i = 0; i < str.length; i++) {
+                          sum = sum + parseInt(str.charAt(i));  //parseInt to convert the decimal or point to integer or non point
+                        }
+                        document.write(sum);
+                      </script>
+                    </xmp>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading888">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse888" aria-expanded="false" aria-controls="flush-collapse888">
+                    88. Find the first and second greatest/biggest/largest number.
+                  </button>
+                </h2>
+                <div id="flush-collapse888" class="accordion-collapse collapse" aria-labelledby="flush-heading888"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <p style="text-align: center;">1st Method Using for loop</p>
+                    <xmp style="overflow:auto;">
+                      <script>
+                        arry = [10, 5, 0, 90, 398, 900, 200, 99, 10, 500];
+                        let sortedArry = (arry.sort((a, b) => (a - b)));
+                        let n = sortedArry.length;
+                        let max = -Infinity;
+                        let smax = -Infinity;
+                        let tmax = -Infinity;
+                        for (i = 0; i < n; i++) {
+                          if (sortedArry[i] > max) {
+                            tmax = smax;
+                            smax = max;
+                            max = sortedArry[i];
+                          }
+                        }
+                        console.log(max, smax, tmax);
+                      </script>
+                    </xmp>
+                    <p style="text-align: center;">2nd Method Using double for loop</p>
+                    <xmp style="overflow:auto;">
+                      <script>
+                        arry = [10, 5, 0, 90, 200, 99, 10];
+                        let n = arry.length;
+                        let max = -Infinity;
+                        // -Infinity is the lowest value , we take it do take as the lowest value. as smallest as possible
+                        let smax = -Infinity;
+                        let tmax = -Infinity;
+                        for (i = 0; i < n; i++) {
+                          max = Math.max(max, arry[i]);
+                          // Here first parameter max means maximum value in arry[i] taken as 2nd parameter
+                        }
+                        for (i = 0; i < n; i++) {
+                          if (arry[i] < max) {
+                            smax = Math.max(smax, arry[i]);
+                            // Here first parameter smax means second maximum value in arry[i] taken as 2nd parameter
+                          }
+                        }
+                        for (i = 0; i < n; i++) {
+                          if (arry[i] < smax) {
+                            tmax = Math.max(tmax, arry[i]);
+                            // Here third parameter tmax means third maximum value in arry[i] taken as 2nd parameter
+                          }
+                        }
+                        console.log(max);
+                        console.log(smax);
+                        console.log(tmax);
+                      </script>
+                    </xmp>
+                    <p style="text-align: center;">3rd Method Using Array Method</p>
+                    <xmp style="overflow:auto;">
+                      <script>
+                        let arry = [10, 5, 0, 90, 100, 99];
+                        let decreasedOrder = arry.sort((a, b) => a - b);
+                        let increasedOrder = arry.sort((a, b) => a - b).reverse();
+
+                        console.log(increasedOrder[0]);  // to get largest number
+                        console.log(increasedOrder[1])// to get the second largest number
+                      </script>
+                    </xmp>
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading899">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse899" aria-expanded="false" aria-controls="flush-collapse899">
+                    89. Print triangle of stars 1?.
+                  </button>
+                </h2>
+                <div id="flush-collapse899" class="accordion-collapse collapse" aria-labelledby="flush-heading899"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+                        for (i = 1; i <= 6; i++) {
+                          for (j = 1; j <= i; j++) {
+                            document.write('*');
+                          }
+                          document.write("<br>");
+                        }
+                      </script>
+                    </xmp>
+                    <p style="text-align: center;">Here is the output : <br>
+                      <script>
+                        for (i = 1; i <= 6; i++) {
+                          for (j = 1; j <= i; j++) {
+                            document.write('*');
+                          }
+                          document.write("<br>");
+                        }
+                      </script>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading900">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse900" aria-expanded="false" aria-controls="flush-collapse900">
+                    90. Print triangle of stars 2?.
+                  </button>
+                </h2>
+                <div id="flush-collapse900" class="accordion-collapse collapse" aria-labelledby="flush-heading900"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+
+                        for (i = 1; i <= 6; i++) {
+                          for (j = i; j <= 6; j++) {
+                            document.write('*');
+                          }
+                          document.write("<br>");
+                        }
+
+                      </script>
+                    </xmp>
+                    <p style="text-align: center;">Here is the output : <br>
+                      <script>
+                        for (i = 1; i <= 6; i++) {
+                          for (j = i; j <= 6; j++) {
+                            document.write('*');
+                          }
+                          document.write("<br>");
+                        }
+                      </script>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading911">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse911" aria-expanded="false" aria-controls="flush-collapse911">
+                  91. Write a program to define an Array and add data in it.
+                </button>
+              </h2>
+              <div id="flush-collapse911" class="accordion-collapse collapse" aria-labelledby="flush-heading911"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  var arr = [1, 2, 3];
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading922">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse922" aria-expanded="false" aria-controls="flush-collapse922">
+                  92. Write a program to remove whitespaces from a string.
+                </button>
+              </h2>
+              <div id="flush-collapse922" class="accordion-collapse collapse" aria-labelledby="flush-heading922"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <xmp style="overflow:auto;">
+                    <script>
+                      var str = 'some string'
+                      function removeWhiteSpace(value) {
+                        let newVal = value.replace(" ", "");
+                        return newVal;
+                      }
+                      let output = removeWhiteSpace(str);
+                      document.write(output);
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Here is the output :
+                    <script>
+                      var str = 'some string'
+                      function removeWhiteSpace(value) {
+                        let newVal = value.replace(" ", "");
+                        return newVal;
+                      }
+                      let output = removeWhiteSpace(str);
+                      document.write(output);
+                    </script>
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading944">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse944" aria-expanded="false" aria-controls="flush-collapse944">
+                  93. Write a program to find sum, divsion and average of array elements where array element are
+                  2,4,5,6.
+                </button>
+              </h2>
+              <div id="flush-collapse944" class="accordion-collapse collapse" aria-labelledby="flush-heading944"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p style="text-align: center;">Using for loop</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arry = [2, 4, 5, 6];
+                      let sum = 0;
+                      for (i = 0; i < arry.length; i++) {
+                        sum = sum + arry[i];
+                      }
+                      document.write(sum);
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Using Reducer</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arry = [2, 4, 5, 6];
+                      let sum = arry.reduce(function (a, b) {
+                        return a + b
+                      })
+                      document.write(sum);
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Division Using Reducer</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arry = [2, 4, 8, 6];
+                      let sum = arry.reduce((a, b) => (a + b));
+                      let division = sum / arry.length;
+                      document.write(division);
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Division Using for loop</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let arry = [2, 4, 8, 6];
+                      let sum = 0;
+                      for (i = 0; i < arry.length; i++) {
+                        sum = sum + arry[i];
+                        divide = sum / arry.length;
+                      }
+                      document.write(divide);
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Here is the output :
+                    <script>
+                      let arry = [2, 4, 8, 6];
+                      let sum = 0;
+                      for (i = 0; i < arry.length; i++) {
+                        sum = sum + arry[i];
+                        divide = sum / arry.length;
+                      }
+                      document.write(divide);
+                    </script>
+                  </p>
+
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-heading955">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapse955" aria-expanded="false" aria-controls="flush-collapse955">
+                  94. Write a program to find the largest of three numbers.
+                </button>
+              </h2>
+              <div id="flush-collapse955" class="accordion-collapse collapse" aria-labelledby="flush-heading955"
+                data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p style="text-align: center;">Using if else if</p>
+
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let nu1 = 50, nu2 = 12, nu3 = 20;
+                      if (nu1 > nu2 && nu1 > nu3) {
+                        document.write('num1 is greatest');
+                      } else if (nu2 > nu1 && nu2 > nu3) {
+                        document.write('num2 is greatest');
+                      } else {
+                        document.write('num3 is greatest');
+                      }
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Using Switch</p>
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let nu1 = 50, nu2 = 52, nu3 = 20;
+                      switch (true) {
+                        case (nu1 > nu2 && nu1 > nu3): document.write('num1 is greatest');
+                          break;
+                        case (nu2 > nu1 && nu2 > nu3): document.write('num2 is greatest');
+                          break;
+                        default: document.write('num3 is greatest');
+                      }
+                    </script>
+                  </xmp>
+                  <p style="text-align: center;">Here is the output :
+                    <script>
+                      let nu1 = 50, nu2 = 52, nu3 = 20;
+                      switch (true) {
+                        case (nu1 > nu2 && nu1 > nu3): document.write('num1 is greatest');
+                          break;
+                        case (nu2 > nu1 && nu2 > nu3): document.write('num2 is greatest');
+                          break;
+                        default: document.write('num3 is greatest');
+                      }
+                    </script>
+                  </p>
+                </div>
+                <div class="accordion-body">
+
+
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading966">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse966" aria-expanded="false" aria-controls="flush-collapse966">
+                    95.Define an array of size 10, the task is to find the largest element in the given array
+                  </button>
+                </h2>
+                <div id="flush-collapse966" class="accordion-collapse collapse" aria-labelledby="flush-heading966"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+                        var arr = [1, 2, 3, 10, 4, 5, 6, 7, 8, 9];
+                        let max = arr[0];
+                        for (i = 0; i < arr.length; i++) {
+                          if (arr[i] > max) {
+                            max = arr[i]
+                          }
+                        }
+                        document.write(max);
+                      </script>
+                    </xmp>
+                    <p style="text-align: center;">Here is the output :
+                      <script>
+                        var arr = [1, 2, 3, 10, 4, 5, 6, 7, 8, 9];
+                        let max = arr[0];
+                        for (i = 0; i < arr.length; i++) {
+                          if (arr[i] > max) {
+                            max = arr[i]
+                          }
+                        }
+                        document.write(max);
+                      </script>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading9667">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse9667" aria-expanded="false" aria-controls="flush-collapse9667">
+                    96.How to convert [2,0,3,0,5] to [2,3,5,0,0]
+                  </button>
+                </h2>
+                <div id="flush-collapse9667" class="accordion-collapse collapse" aria-labelledby="flush-heading9667"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <xmp style="overflow:auto;">
+                      <script>
+                        let arry = [4, 6, 0, 7, 0, 8];
+                        let output = arry.filter((item) => item > 0);
+                        let zero = arry.length - output.length
+                        let result = [...new Array(zero).fill(0), ...output]
+                        document.write(result);
+                      </script>
+                    </xmp>
+                    <p style="text-align: center;">Here is the output :
+                      <script>
+                        let arry = [4, 6, 0, 7, 0, 8];
+                        let output = arry.filter((item) => item > 0);
+                        let zero = arry.length - output.length
+                        let result = [...new Array(zero).fill(0), ...output]
+                        document.write(result);
+                      </script>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading9668">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse9668" aria-expanded="false" aria-controls="flush-collapse9668">
+                    97.How to loop through an array and array of object inside in JavaScript?
+                    Or How to display array value in a div?
+                  </button>
+                </h2>
+                <div id="flush-collapse9668" class="accordion-collapse collapse" aria-labelledby="flush-heading9668"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/array of object.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading9663">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse9663" aria-expanded="false" aria-controls="flush-collapse9663">
+                    98.How to toggle or hide and show on button click.
+                  </button>
+                </h2>
+                <div id="flush-collapse9663" class="accordion-collapse collapse" aria-labelledby="flush-heading9663"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/toggle_example.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- scroll bar  -->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- scroll bar  -->
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+              crossorigin="anonymous">
+              </script>
+            <!-- scroll bar script -->
+            <script>
+              // Get the button
+              let mybutton = document.getElementById("myBtn");
+
+              // When the user scrolls down 20px from the top of the document, show the button
+              window.onscroll = function () { scrollFunction() };
+
+              function scrollFunction() {
+                if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                  mybutton.style.display = "block";
+                } else {
+                  mybutton.style.display = "none";
+                }
+              }
+
+              // When the user clicks on the button, scroll to the top of the document
+              function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+              }
+
+              function css() { window.location.href = 'css.html' }
+              function js() { window.location.href = 'JavaScript.html' }
+              function react() { window.location.href = 'index.html' }
+              function jq() { window.location.href = 'jQuery.html' }
+              function pdf() { window.location.href = 'pdf.html' }
+              function wp() { window.location.href = 'wordPress.html' }
+            </script>
+            <script src="script.js"></script>
+
+  </main>
+  <script>
+
+    const searchFun = () => {
+      var filter = document.getElementById('myInput').value.toUpperCase();
+      // var inp = document.getElementById('myInput');
+      let questionData = document.getElementsByClassName('accordion-button'); // To get the question data we targeted
+      for (var i = 0; i < questionData.length; i++) {
+        let qd = questionData[i].innerText;
+        // let re = new RegExp(inp.value, 'i');
+        if (qd.toUpperCase().indexOf(filter) > -1) {
+          // qd.replace(re, '<mark>$&</mark>');  // $& returns the entire matched string (some systems its $0)
+          questionData[i].style.color = "blue";
+          questionData[i].style.display = "";
+        } else {
+          questionData[i].style.display = "none";
+
+        }
+
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>

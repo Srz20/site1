@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>jQuery</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nav.css">
+</head>
+
+<body>
+  <nav>
+    <div class="left">
+      <ul>
+        <li><a href="#" onclick="css()">CSS</a></li>
+        <li><a href="#" onclick="react()">React</a></li>
+        <li><a href="#" onclick="js()">JavaScript</a></li>
+        <li><a href="#" onclick="jq()">jQuery</a></li>
+        <li><a href="#" onclick="wp()">WP</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <form action="">
+        <input type="text" placeholder="Search" onkeyup="searchFun()" id="myInput">
+        <button value="" onclick="search()">Search</button>
+      </form>
+    </div>
+  </nav>
+  <main>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            1. What is difference between jQuery and JavaScript and what are jQuery features? How and when can we use
+            jQery?
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/jquery_feature_difference.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <p>
+            We can use jQuery to apply CSS, call function on events, traverse the DOM and to add effect too.
+          </p>
+          <p>
+            We can download the file and add under src attribue before the closing or head tag.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            2.What are the jQuery functions used to provide effects? <br>
+            chaining method.
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/jQuery_effectMethods.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            3. What is the use of css method in jQuery? How to add and remove CSS classes to an element using jQuery?
+            Give
+            one example.
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/jQuery_css_methods.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+            4. What is the difference between find and children methods? Why jQuery is better than JavaScript?
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/jQuery_find_children.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <p>
+            jQuery is better than JavaScript because it is a great library for developing AJAX based applicaiton. <br>
+            It helps to keep the code simple, consise and reusable. <br>
+            It makes the process of DOM traversering very easy. <br>
+            It can handle events, perform animation and easily add ajax in the applicaiton.
+          </p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-heading35">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapse35" aria-expanded="false" aria-controls="flush-collapse35">
+            5. Write a jQuery has, is and each methods?
+          </button>
+        </h2>
+        <div id="flush-collapse35" class="accordion-collapse collapse" aria-labelledby="flush-heading35"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/jQuery_has_each_isMethods.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+            6. What are jQuery events? Give examples of form events as well.
+          </button>
+        </h2>
+        <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+          data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+            <div class="edit_image">
+              <img src="images/jQuery_mouseEvent.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/jQuery_formEvents.png" class="img-fluid" alt="">
+            </div>
+            <div class="edit_image">
+              <img src="images/jQuery_event2.png" class="img-fluid" alt="">
+            </div>
+
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSeven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+              7. What is jQuery?
+            </button>
+          </h2>
+          <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>
+                jQuery is a lightweight, browser independent(No need to to check the code on different browsers whether
+                working or not) client-side, cross-platform JavaScript library. It is used to make more interactive,
+                attractive and dynamic web pages. <br>
+                It helps to speed up the development process because it shortens the
+                length of the code. It is based on write less and do more. It is very easy to manipulate the DOM,
+                traverse
+                the document, applying CSS, event handling, Ajax and animation.
+                <br>
+                1.1 Does jQuery work for both HTML and XML documents? <br>
+                Ans:- No. jQuery works only for HTML documents. <br>
+                1.2 Is jQuery a JavaScript or JSON library file or post? <br>
+                Ans:- jQuery is said to be a library of single JavaScript files which consists of DOM/CSS manipulations,
+                event effects or animations, AJAX functions and various commonly used plugins.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingEight">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+              8. What is CDN? <br> types of CDN <br>
+              What is the goal of CDN and what are the advantages of using CDN?
+            </button>
+          </h2>
+          <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p>
+                CDN stands for Content Delivery Network or Content Distribution Network. We know that we can use jQuery
+                by
+                downloading and the jQuery file and then use that in our project HTML file under script tag with ‘src’
+                attribute. But, when we use this process, our server will have to load 30kb file every time we run the
+                code. So, instead of loading this 30kb on every run, we will use CDN path under before closing tag of
+                body
+                or head tag. <br>
+                Suppose a visitor requested for something like a visitor tries to open the your website, then server
+                will
+                open that website and return HTML, CSS, IMAGES AND JQUERY IF USED as a website is a combination of these
+                things. If we have multiple visitors who will try to access our website at the same time will increase
+                load on the server because server is giving HTML, CSS , images and 30kb jQuery file too to all the
+                visitors. So, to reduce the load of the server we provide 30kb jQuery file from different server called
+                third party server from where our jQuery file is being received by the visitors. They are receiving
+                HTML,
+                CSS and images from one server which is our server and jQuery from another server called CDN server. It
+                is
+                called Content Delivery Network because your website content is coming from different networks. We can
+                keep the images and CSS in different network too. <br>
+                To use CDN path of jQuery, go to jQuery.com and copy CDN path and then use in your project. <br>
+                <b>
+                  1.2 What is the goal of CDN and what are the advantages of using CDN?
+
+                </b> <br>
+                The primary goal of the CDN is to provide content to the end-users with high availability and high
+                performance.
+                <b>
+                  Advantages of using CDN:
+                </b> <br>
+                oIt reduces the load from the server. <br>
+                oIt saves bandwidth. jQuery framework is loaded faster from these CDN. <br>
+                If a user regularly visits a site which is using jQuery framework from any of these CDN, it will be
+                cached.
+              </p>
+              <p>
+                <b>
+                  1.3 What are the two types of CDNs?
+                </b> <br>
+                There are two types of CDN: <br>
+                Microsoft: It loads jQuery from AJAX CDN. <br>
+                Google: It loads jQuery from Google libraries API. <br>
+                Yahoo:-
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingNine">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+              9. What are the selectors in jQuery? How many types of selectors in jQuery?
+            </button>
+          </h2>
+          <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_selectors.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+              10. Why do we use jQuery?
+            </button>
+          </h2>
+          <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen"
+            data-bs-parent="#accordionFlushExample">
+            <p style="margin:20px;">
+              1. It is very easy to learn and use. <br>
+              2. It keeps the code simple, readable, clear and reusable. <br>
+              3. It also makes it easy to add animations and transitions to your pages. With the help of jQuery, you can
+              perform many basic activities that would otherwise require numerous lines of JavaScript code by calling
+              methods instead. <br>
+              4. It provides easy selectors just $(“#sar) instead of document.getElementByid(“”) <br>
+              5. It is easy to handle complex animation because in Ajax we use long & length codes but here the same can
+              be
+              done in one line. <br>
+              6. It is browser independent.<br>
+              7. It improves the performance of an application.<br>
+              8. It is very fast and extensible and reduces the size of the file <br>
+              9. CSS styling and DOM manipulation are very easy. <br>
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingEleven">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+              11. What is the exact difference between the methods window.onload() and document.ready()??
+            </button>
+          </h2>
+          <div id="flush-collapseEleven" class="accordion-collapse collapse" aria-labelledby="flush-headingEleven"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_load.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwelve">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+              12. What is the $() function in the jQuery library?
+            </button>
+          </h2>
+          <div id="flush-collapseTwelve" class="accordion-collapse collapse" aria-labelledby="flush-headingTwelve"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_dollar.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThirteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+              13. Can you tell something about jQuery each() method?
+            </button>
+          </h2>
+          <div id="flush-collapseThirteen" class="accordion-collapse collapse" aria-labelledby="flush-headingThirteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/connect_redux.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFourteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFourteen" aria-expanded="false" aria-controls="flush-collapseFourteen">
+              14. Describe jQuery Connect in brief. Also, list its uses.
+            </button>
+          </h2>
+          <div id="flush-collapseFourteen" class="accordion-collapse collapse" aria-labelledby="flush-headingFourteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_connect.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFifteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFifteen" aria-expanded="false" aria-controls="flush-collapseFifteen">
+              15. What is jQuery Mobile or mobile-first app?
+            </button>
+          </h2>
+          <div id="flush-collapseFifteen" class="accordion-collapse collapse" aria-labelledby="flush-headingFifteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_mobile_first.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSixteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSixteen" aria-expanded="false" aria-controls="flush-collapseSixteen">
+              16. What is the significance of jQuery.length??
+            </button>
+          </h2>
+          <div id="flush-collapseSixteen" class="accordion-collapse collapse" aria-labelledby="flush-headingSixteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_length.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingEighteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEighteen" aria-expanded="false" aria-controls="flush-collapseEighteen">
+              17. What is the purpose of J Query's delay() method? Can you use this for different types of browsers like
+              (Internet Explorer)??
+            </button>
+          </h2>
+          <div id="flush-collapseEighteen" class="accordion-collapse collapse" aria-labelledby="flush-headingEighteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_delay.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingNineteen">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNineteen" aria-expanded="false" aria-controls="flush-collapseNineteen">
+              18. Explain jQuery no-conflict.?
+            </button>
+          </h2>
+          <div id="flush-collapseNineteen" class="accordion-collapse collapse" aria-labelledby="flush-headingNineteen"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_confilict.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwenty">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwenty" aria-expanded="false" aria-controls="flush-collapseTwenty">
+              19. What exactly is a jQuery Data Table plug-in? Also, explain the uses with examples.? Why jQuery is so
+              famous? <br>
+              Define plug in. How to use jQuery plug-in?
+            </button>
+          </h2>
+          <div id="flush-collapseTwenty" class="accordion-collapse collapse" aria-labelledby="flush-headingTwenty"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_plugin.png" class="img-fluid" alt="">
+              </div>
+              <div class="edit_image">
+                <img src="images/jQuery_plugin2.png" class="img-fluid" alt="">
+              </div>
+              <div class="link">
+                <a href="https://www.youtube.com/watch?v=wFKVd8wnhyc">How to implement plugin/a>
+              </div>
+              <a href="https://www.bestjquery.com/">www.bestjquery.com provide javaScript
+                and jQuery plugins. It is both paid(premium) and free plugins
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwentyOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwentyOne" aria-expanded="false" aria-controls="flush-collapseTwentyOne">
+              20. In jQuery, distinguish between the bind(), live(), on() and delegate() functions.
+            </button>
+          </h2>
+          <div id="flush-collapseTwentyOne" class="accordion-collapse collapse" aria-labelledby="flush-headingTwentyOne"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <p style="font-size: 14px;">
+                The bind(), live(), on() and delegate() are event handlers. Though, there are some minor differences
+                <br>
+                1. bind() method is used to bind the current event only whereas live(), on() and delegate() are used to
+                bind
+                the both current and future event. <br>
+                2. on(), delegate() and live() methods are used for the same purpose but the only
+                difference is of the syntax and we used delegate before 1.7 version and after that live() method was
+                used till 1.9 version because live method was removed in version 1.9 and now we use on() method. <br>
+                3. The syntax of bind() and live() are same. <span style="color: red;">$(selector).bind/live(event,
+                  function)</span> <br>
+                The syntax of on() method is <span style="color:blue;"> $(document).on(event, selector, function)
+                </span> <br>
+                and the syntax of delegate is
+                <span style="color:rgb(0, 255, 115);">$(document).on(selector, event, function) </span><br>
+                4. The difference between live and delegate is that live() function does not support chaining but
+                delegate does. <br>
+                5. The difference between bind and delegate is that live() works only within a DOM element which means
+                it is used to control the order in which items are displayed but if we want to bind the events to items
+                available in a different element we should use delegate function.
+              </p>
+
+              <div class="edit_image">
+                <img src="images/bindvslive.png" class="img-fluid" alt="">
+              </div>
+              <div class="edit_image">
+                <img src="images/jQuery_live_bind.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwentytwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwentytwo" aria-expanded="false" aria-controls="flush-collapseTwentytwo">
+              21. Ditinguish between jQuery.min.js and jQuery.js.
+            </button>
+          </h2>
+          <div id="flush-collapseTwentytwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwentytwo"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_min.png" class="img-fluid" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwentythree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwentythree" aria-expanded="false"
+              aria-controls="flush-collapseTwentythree">
+              22. In jQuery, what is the difference between $(this) and this.
+            </button>
+          </h2>
+          <div id="flush-collapseTwentythree" class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwentythree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <div class="edit_image">
+                <img src="images/jQuery_this.png" class="img-fluid" alt="">
+              </div>
+            </div>
+            <div class="link">
+              <a href="https://www.youtube.com/watch?v=TBVpCKNuPtw">Refer link</a>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwentyfour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwentyfour" aria-expanded="false"
+                aria-controls="flush-collapseTwentyfour">
+                23. Can you explain about ajaxStart(), ajaxStop() etc. functions?
+              </button>
+            </h2>
+            <div id="flush-collapseTwentyfour" class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwentyfour" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <div class="edit_image">
+                  <img src="images/jQuery_ajaxStart.png" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentyfive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentyfive" aria-expanded="false"
+                  aria-controls="flush-collapseTwentyfive">
+                  24.Describe the benefits of jQuery Ajax techniques.
+                </button>
+              </h2>
+              <div id="flush-collapseTwentyfive" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentyfive" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/jQuery_ajaxTecknique.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwentysix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwentysix" aria-expanded="false"
+                  aria-controls="flush-collapseTwentysix">
+                  25. What is the purpose of JQuery's serialize() method? and Define get and post method.
+                </button>
+              </h2>
+              <div id="flush-collapseTwentysix" class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwentysix" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <div class="edit_image">
+                    <img src="images/jQuery_serialize.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="edit_image">
+                    <img src="images/jQuery_ajaxAll.png" class="img-fluid" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThirtytwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThirtytwo" aria-expanded="false"
+                    aria-controls="flush-collapseThirtytwo">
+                    26. How to perform jQuery AJAX requests?
+                  </button>
+                </h2>
+                <div id="flush-collapseThirtytwo" class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingThirtytwo" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_ajaxRequest.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwentyeight">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwentyeight" aria-expanded="false"
+                    aria-controls="flush-collapseTwentyeight">
+                    27. What does the following code do?
+                    $( "div#firstDiv, div.firstDiv, ol#items > [name$='firstDiv']" )
+                  </button>
+                </h2>
+                <div id="flush-collapseTwentyeight" class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwentyeight" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_code.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwentynine">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwentynine" aria-expanded="false"
+                    aria-controls="flush-collapseTwentynine">
+                    28. Write a jQuery code to create and delete cookies from the browser.
+                  </button>
+                </h2>
+                <div id="flush-collapseTwentynine" class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwentynine" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_cookies.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwentynine1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwentynine1" aria-expanded="false"
+                    aria-controls="flush-collapseTwentynine1">
+                    29. jQuery all methods name.
+                  </button>
+                </h2>
+                <div id="flush-collapseTwentynine1" class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingTwentynine1" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQueryMethods.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading30">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse30" aria-expanded="false" aria-controls="flush-collapse30">
+                    30. jQuery DOM and window mehtods, get and set methods in jQuery.
+                  </button>
+                </h2>
+                <div id="flush-collapse30" class="accordion-collapse collapse" aria-labelledby="flush-heading30"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_DOM_WINDOW_selectors.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="edit_image">
+                      <img src="images/jQuery_get_set.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading31">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse31" aria-expanded="false" aria-controls="flush-collapse31">
+                    31. Basic selectors, type selectors.
+                  </button>
+                </h2>
+                <div id="flush-collapse31" class="accordion-collapse collapse" aria-labelledby="flush-heading31"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_basic_type.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading32">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse32" aria-expanded="false" aria-controls="flush-collapse32">
+                    32. Write a jQuery code to create and delete cookies from the browser.
+                  </button>
+                </h2>
+                <div id="flush-collapse32" class="accordion-collapse collapse" aria-labelledby="flush-heading32"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_cookies.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-heading34">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapse34" aria-expanded="false" aria-controls="flush-collapse34">
+                    33. Write a jQuery traversering methods?
+                  </button>
+                </h2>
+                <div id="flush-collapse34" class="accordion-collapse collapse" aria-labelledby="flush-heading34"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <div class="edit_image">
+                      <img src="images/jQuery_traverseringMethods.png" class="img-fluid" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+            <!-- scroll bar  -->
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <!-- scroll bar  -->
+
+            <!-- Option 1: Bootstrap Bundle with   Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+              crossorigin="anonymous">
+              </script>
+            <!-- scroll bar script -->
+            <script>
+              // Get the button
+              let mybutton = document.getElementById("myBtn");
+
+              // When the user scrolls down 20px from the top of the document, show the button
+              window.onscroll = function () { scrollFunction() };
+
+              function scrollFunction() {
+                if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                  mybutton.style.display = "block";
+                } else {
+                  mybutton.style.display = "none";
+                }
+              }
+
+              // When the user clicks on the button, scroll to the top of the document
+              function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+              }
+              function css() { window.location.href = 'css.html' }
+              function js() { window.location.href = 'JavaScript.html' }
+              function react() { window.location.href = 'index.html' }
+              function jq() { window.location.href = 'jQuery.html' }
+              function pdf() { window.location.href = 'pdf.html' }
+              function wp() { window.location.href = 'wordPress.html' }
+
+
+            </script>
+            <script src="script.js"></script>
+
+  </main>
+  <script>
+
+    const searchFun = () => {
+      var filter = document.getElementById('myInput').value.toUpperCase();
+      // var inp = document.getElementById('myInput');
+      let questionData = document.getElementsByClassName('accordion-button'); // To get the question data we targeted
+      for (var i = 0; i < questionData.length; i++) {
+        let qd = questionData[i].innerText;
+        // let re = new RegExp(inp.value, 'i');
+        if (qd.toUpperCase().indexOf(filter) > -1) {
+          // qd.replace(re, '<mark>$&</mark>');  // $& returns the entire matched string (some systems its $0)
+          questionData[i].style.color = "blue";
+          questionData[i].style.display = "";
+        } else {
+          questionData[i].style.display = "none";
+
+        }
+
+      }
+
+    }
+  </script>
+
+</body>
+
+</html>
