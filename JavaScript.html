@@ -622,7 +622,8 @@
           data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
             <p>
-              Lexical scope is the definition area of an expression. In other words, an item's lexical scope is the place in which the item got created. <br>
+              Lexical scope is the definition area of an expression. In other words, an item's lexical scope is the
+              place in which the item got created. <br>
               Lexical scope tells the range of anything. we use arrow function when we have the issue of lexical scope.
               For example:-If we daclare let variable inside a function, we will say that the scope of let variable
               is till this function or the lexical scope of let variable is this function. <br>
@@ -1935,14 +1936,15 @@
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseTwentyfive" aria-expanded="false"
                   aria-controls="flush-collapseTwentyfive">
-                  53. What is the use of window object?
+                  53. What is the use of window object, history object, preventDefault and stopPropagation?
                 </button>
               </h2>
               <div id="flush-collapseTwentyfive" class="accordion-collapse collapse"
                 aria-labelledby="flush-headingTwentyfive" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                  <div class="edit_image">
-                    <img src="images/window_object.png" class="img-fluid" alt="">
+
+                  <div class="edit_image" id="target1">
+                    <img src="images/window_object2.png" class="img-fluid" alt="">
                   </div>
                 </div>
               </div>
@@ -2028,11 +2030,31 @@
               </h2>
               <div id="flush-collapseThirty" class="accordion-collapse collapse" aria-labelledby="flush-headingThirty"
                 data-bs-parent="#accordionFlushExample">
+                Destructoring means breaking down a complex structure into a simpler parts. With the syntax of
+                des we can easily extract the value of an array and object. It is used for the assigment and declaration
+                of a variable. <br>
                 <div class="accordion-body">
                   <div class="edit_image">
                     <img src="images/destructuring.png" class="img-fluid" alt="">
                   </div>
-
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let x = [1, 2, "sarfraz"]
+                      const [first, second, third] = x;
+                      console.log(first); // 1
+                    </script>
+                     <script>
+                      let user = {name:"sarfraz", age:25}
+                      let {name, age} = user;
+                      console.log(name);  // sarfraz
+                    </script>
+                    <script>
+                      let user1 = {surname:"Mr", sex:Male}
+                      let {surname:s, sex:se} = user;
+                      console.log(s);  // sarfraz
+                      console.log(se);  // Male
+                    </script>
+                  </xmp>
                 </div>
               </div>
             </div>
@@ -2045,7 +2067,7 @@
                   Expression
                   /pattern/g.
                 </button>
-              </h2>
+              </  h2>
               <div id="flush-collapse1" class="accordion-collapse collapse" aria-labelledby="flush-heading1"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
@@ -2133,20 +2155,7 @@
                 </div>
               </div>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="flush-heading622">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#flush-collapse622" aria-expanded="false" aria-controls="flush-collapse622">
-                  62. What is the use of history object?
-                </button>
-              </h2>
-              <div id="flush-collapse622" class="accordion-collapse collapse" aria-labelledby="flush-heading622"
-                data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                  Refer notes
-                </div>
-              </div>
-            </div>
+
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-heading50">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -2175,7 +2184,10 @@
               <div id="flush-collapse644" class="accordion-collapse collapse" aria-labelledby="flush-heading644"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                  Refer notes
+                  Document : The document comes under the windows object and can also be considered as its property.
+                  <br>
+                  Window in JavaScript is a global object that holds the structure like variables, functions, location,
+                  historyetc.
                 </div>
               </div>
             </div>
@@ -2206,7 +2218,14 @@
               <div id="flush-collapse666" class="accordion-collapse collapse" aria-labelledby="flush-heading666"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                  Refer notes
+                  Yes, JavaScript is a dynamically typed language and not statically. <br>
+                  Statically typed language is a language in which we have to define variable type or data type before
+                  initialization like var, let, or const when we assign any value like a =10; <br>
+                  In statically typed language if we write like a=10; the interpreter/compiler/translator will throw an
+                  error as they compiler is not so advanced but in dynamically typed language the interpreter will add
+                  the variable type if we miss as it is very advanced. <br>
+                  Since, the interpreter of JavaScript add the variable type before the code execution so we don’t get
+                  any error but programming languages like c, c++, java are statically typed language. <br>
                 </div>
               </div>
             </div>
@@ -2236,7 +2255,20 @@
               <div id="flush-collapse688" class="accordion-collapse collapse" aria-labelledby="flush-heading688"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                  Refer notes
+                  Constructor functions are used to create single objects or multiple objects with similar properties
+                  and methods. It is like a blueprint that can be reused for different objects. We don’t have to create
+                  different function for different objects again and again. It saves the time and coding length. <br>
+                  Example: <br>
+                  function Person(name,age,gender) <br>
+                  { <br>
+                  this.name = name; <br>
+                  this.age = age; <br>
+                  this.gender = gender; <br>
+                  } <br>
+                  var person1 = new Person("Vivek", 76, "male"); <br>
+                  console.log(person1); <br>
+                  var person2 = new Person("Courtney", 34, "female"); <br>
+                  console.log(person2); <br>
                 </div>
               </div>
             </div>
@@ -2271,6 +2303,44 @@
                   <div class="edit_image">
                     <img src="images/recursion.png" class="img-fluid" alt="">
                   </div>
+                  <xmp style="overflow:auto;">
+
+                    <script>
+                      let arr = [1, 2, [[[3, 4]]], 5, [[6]], [7, 8], 9, 10];
+                      let output = [];
+                      function flatten(arr) {
+                        for (let i = 0; i < arr.length; i++) {
+                          if (Array.isArray(arr[i])) {
+                            flatten(arr[i]);
+                          } else {
+                            output += arr[i];
+                          }
+                        }
+                        return output;
+                      }
+                      console.log(flatten(arr));
+                    </script>
+                  </xmp>
+                  <h2>Second Method</h2>
+                  <xmp style="overflow:auto;">
+
+                    <script>
+                      const nested = [1, [[[2, 3]]], [4, 5, [6, 7], [[8, 9]]]]
+                      function flatten(arr) {
+                        const result = []
+                        arr.forEach((i) => {
+                          if (Array.isArray(i)) {
+                            result.push(...flatten(i))
+                          } else {
+                            result.push(i)
+                          }
+                        })
+                        return result
+                      }
+                      x = flatten(nested) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                      console.log(x);
+                    </script>
+                  </xmp>
                 </div>
               </div>
             </div>
@@ -2310,14 +2380,25 @@
               <h2 class="accordion-header" id="flush-heading733">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                   data-bs-target="#flush-collapse733" aria-expanded="false" aria-controls="flush-collapse733">
-
-                  73.What is the use of window object?
+                  73.How to convert an object into an array?
                 </button>
               </h2>
               <div id="flush-collapse733" class="accordion-collapse collapse" aria-labelledby="flush-heading733"
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                  Refer notes
+                  <xmp style="overflow:auto;">
+                    <script>
+                      let obj = { id: "1", name: "user22", age: "26", work: "programmer" };
+                      console.log(Object.keys(obj)); // [ "id", "name", "age", "work" ]
+                      console.log(Object.values(obj)); //  [ "1", "user22", "26", "programmer" ]
+                      console.log(Object.entries(obj));
+                  // It will return the entries like Array(4) [ (2) […], (2) […], (2) […], (2) […] ]
+                  // 0: Array [ "id", "1" ]
+                  // 1: Array [ "name", "user22" ]
+                  // 2: Array [ "age", "26" ]
+                  // 3: Array [ "work", "programmer" ]
+                    </script>
+                  </xmp>
                 </div>
               </div>
             </div>
@@ -2704,7 +2785,7 @@
                           if (sortedArry[i] > max) {
                             tmax = smax;
                             smax = max;
-                            max = sortedArry[i];
+                            max = sortedArry[i]; // make sure the sequence as it is to get the correct output
                           }
                         }
                         console.log(max, smax, tmax);
@@ -2851,10 +2932,23 @@
                 data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                   <xmp style="overflow:auto;">
+                    <h3>To remove between two strings</h3>
+
                     <script>
                       var str = 'some string'
                       function removeWhiteSpace(value) {
                         let newVal = value.replace(" ", "");
+                        return newVal;
+                      }
+                      let output = removeWhiteSpace(str);
+                      document.write(output);
+                    </script>
+                    <h3>To remove all whitespaces</h3>
+                    <script>
+
+                      var str = 'some string is dancing is playing'
+                      function removeWhiteSpace(value) {
+                        let newVal = value.replace(/ /g, "");
                         return newVal;
                       }
                       let output = removeWhiteSpace(str);
@@ -3098,6 +3192,9 @@
                   <div class="accordion-body">
                     <div class="edit_image">
                       <img src="images/toggle_example.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="edit_image">
+                      <img src="images/toggleWithJs.png" class="img-fluid" alt="">
                     </div>
                   </div>
                 </div>
